@@ -1,0 +1,237 @@
+<!DOCTYPE html> 
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lingkungan Kerja | PT Mulia Farmindo Sejahtera</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-green': '#2E7D32',
+            'primary-yellow': '#FDD835',
+            'primary-brown': '#8D6E63',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+    .hero-bg {
+      background-image: linear-gradient(135deg, rgba(46, 125, 50, 0.85) 0%, rgba(46, 125, 50, 0.75) 100%), url("assets/images/kandang.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.6s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-green-50 via-white to-green-50">
+  <!-- Header -->
+  <header class="shadow-2xl sticky top-0 z-50" style="background: linear-gradient(135deg, #2E7D32 0%, #1b5e20 100%);">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <div class="bg-white bg-opacity-20 p-2 rounded-lg backdrop-blur-sm">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+            </svg>
+          </div>
+          <div>
+            <h1 class="text-xl font-bold tracking-tight text-white">PT Mulia Farmindo Sejahtera</h1>
+            <p class="text-sm text-green-100">Peternakan Ayam Terintegrasi</p>
+          </div>
+        </div>
+        <nav class="hidden md:flex space-x-1">
+          <a href="index.html" class="px-5 py-2 rounded-lg hover:bg-white hover:bg-opacity-20 transition-all duration-300 font-medium text-white">Beranda</a>
+          <a href="lingkungan.html" class="px-5 py-2 rounded-lg bg-white bg-opacity-20 backdrop-blur-sm transition-all duration-300 font-medium text-white">Lingkungan Kerja</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-bg min-h-[450px] flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30"></div>
+    <div class="relative z-10 text-center px-6 animate-fade-in">
+      <div class="inline-block mb-4 px-6 py-2 backdrop-blur-md rounded-full border-2" style="background-color: rgba(253, 216, 53, 0.2); border-color: #FDD835;">
+        <span class="font-semibold text-sm tracking-wide" style="color: #FDD835;">KESELAMATAN & KESEHATAN KERJA</span>
+      </div>
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl" style="color: #FDD835;">Lingkungan Kerja</h1>
+      <p class="text-white text-lg md:text-xl max-w-2xl mx-auto drop-shadow-lg">Menciptakan Lingkungan Kerja yang Aman, Sehat, dan Produktif</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="max-w-6xl mx-auto px-6 py-16 -mt-16 relative z-20">
+    
+    <!-- Bahaya Fisik Kritis -->
+    <div class="glass-card rounded-3xl shadow-2xl p-8 md:p-12 mb-8 hover-lift animate-fade-in">
+      <div class="flex items-center mb-6">
+        <div class="p-3 rounded-xl mr-4 shadow-lg" style="background: linear-gradient(135deg, #2E7D32 0%, #1b5e20 100%);">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold" style="color: #2E7D32;">Bahaya Fisik Kritis</h2>
+      </div>
+      
+      <p class="text-gray-600 mb-8 leading-relaxed text-lg">Bahaya fisik yang diidentifikasi di bawah ini adalah faktor utama yang mendasari pemilihan Alat Pelindung Diri (APD)  (misalnya: respirator untuk mengatasi Amonia dan Debu).</p>
+
+      <div class="overflow-x-auto rounded-2xl shadow-xl">
+        <table class="w-full">
+          <thead>
+            <tr class="text-white" style="background: linear-gradient(135deg, #2E7D32 0%, #1b5e20 100%);">
+              <th class="px-6 py-4 text-left font-semibold">Bahaya Kritis</th>
+              <th class="px-6 py-4 text-left font-semibold">Lokasi</th>
+              <th class="px-6 py-4 text-left font-semibold">Dampak pada Pekerja</th>
+              <th class="px-6 py-4 text-left font-semibold">Pengendalian Primer</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <tr class="transition-colors duration-200" style="background-color: #ffffff;">
+              <td class="px-6 py-4 font-semibold text-gray-800">Ammonia</td>
+              <td class="px-6 py-4 text-gray-600">Dalam Kandang (kotoran ayam)</td>
+              <td class="px-6 py-4 text-gray-600">Iritasi mata/saluran pernapasan, Gangguan paru-paru.</td>
+              <td class="px-6 py-4 text-gray-600">Ventilasi kandang yang kuat dan pembersihan rutin litter.</td>
+            </tr>
+            <tr class="transition-colors duration-200" style="background-color: #fafafa;">
+              <td class="px-6 py-4 font-semibold text-gray-800">Debu Organik</td>
+              <td class="px-6 py-4 text-gray-600">Kandang (pakan, bulu, kotoran kering)</td>
+              <td class="px-6 py-4 text-gray-600">Gangguan pernapasan kronis, Asma, Alergi.</td>
+              <td class="px-6 py-4 text-gray-600">Penggunaan Masker Respirator (N95/N100) dan sistem fogging minimal.</td>
+            </tr>
+            <tr class="transition-colors duration-200" style="background-color: #ffffff;">
+              <td class="px-6 py-4 font-semibold text-gray-800">Iklim Kerja</td>
+              <td class="px-6 py-4 text-gray-600">Kandang tertutup (close house), cuaca panas</td>
+              <td class="px-6 py-4 text-gray-600">Heat stress, Dehidrasi, Kelelahan.</td>
+              <td class="px-6 py-4 text-gray-600">Pengawasan suhu/kelembaban, rotasi kerja, penyediaan air minum.</td>
+            </tr>
+            <tr class="transition-colors duration-200" style="background-color: #fafafa;">
+              <td class="px-6 py-4 font-semibold text-gray-800">Kebisingan</td>
+              <td class="px-6 py-4 text-gray-600">Mesin blower (ventilasi) dan generator</td>
+              <td class="px-6 py-4 text-gray-600">Gangguan pendengaran, Stres kerja.</td>
+              <td class="px-6 py-4 text-gray-600">Ear plug atau ear muff, pemeliharaan mesin.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Protokol Biosekuriti -->
+    <div class="glass-card rounded-3xl shadow-2xl p-8 md:p-12 mb-8 hover-lift animate-fade-in">
+      <div class="flex items-center mb-6">
+        <div class="p-3 rounded-xl mr-4 shadow-lg" style="background: linear-gradient(135deg, #8D6E63 0%, #6d4c41 100%);">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold" style="color: #2E7D32;">Protokol Biosekuriti</h2>
+      </div>
+      
+      <p class="text-gray-600 mb-6 leading-relaxed text-lg">Protokol ini bertujuan melindungi ayam dari penyakit dan melindungi pekerja dari potensi penyakit yang ditularkan hewan ke manusia (Zoonosis, seperti Flu Burung atau penyakit pernapasan lainnya).</p>
+
+      <div class="space-y-4">
+        <div class="flex items-start p-6 rounded-xl hover:shadow-lg transition-all duration-300" style="background: linear-gradient(to right, #f1f8e9 0%, #e8f5e9 100%); border-left: 4px solid #2E7D32;">
+          <div class="rounded-full p-2 mr-4 mt-1" style="background-color: #2E7D32;">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800 mb-2">Pakaian Khusus</h3>
+            <p class="text-gray-600">Wajib menggunakan coverall atau pakaian pelindung khusus saat memasuki area kandang.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start p-6 rounded-xl hover:shadow-lg transition-all duration-300" style="background: linear-gradient(to right, #f1f8e9 0%, #e8f5e9 100%); border-left: 4px solid #2E7D32;">
+          <div class="rounded-full p-2 mr-4 mt-1" style="background-color: #2E7D32;">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800 mb-2">Disinfeksi</h3>
+            <p class="text-gray-600">Melalui foot dip (bak celup kaki) dan hand sanitizer sebelum dan sesudah interaksi dengan ayam.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start p-6 rounded-xl hover:shadow-lg transition-all duration-300" style="background: linear-gradient(to right, #f1f8e9 0%, #e8f5e9 100%); border-left: 4px solid #2E7D32;">
+          <div class="rounded-full p-2 mr-4 mt-1" style="background-color: #2E7D32;">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800 mb-2">Pelaporan Kesehatan</h3>
+            <p class="text-gray-600">Pekerja wajib melaporkan gejala penyakit (terutama demam atau flu) kepada manajemen segera.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dampak Kesehatan Kerja -->
+    <div class="glass-card rounded-3xl shadow-2xl p-8 md:p-12 hover-lift animate-fade-in">
+      <div class="flex items-center mb-6">
+        <div class="p-3 rounded-xl mr-4 shadow-lg" style="background: linear-gradient(135deg, #FDD835 0%, #f9a825 100%);">
+          <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold" style="color: #2E7D32;">Dampak Kesehatan Kerja</h2>
+      </div>
+      
+      <div class="p-8 rounded-2xl" style="background: linear-gradient(to right, #fffde7 0%, #fff9c4 100%); border: 2px solid #FDD835;">
+        <p class="text-gray-700 leading-relaxed text-lg">Pekerja harus mewaspadai <span class="font-semibold" style="color: #2E7D32;">Gangguan Pernapasan Kronis</span> akibat paparan debu dan amonia yang terus-menerus, serta risiko <span class="font-semibold" style="color: #2E7D32;">Gangguan Pendengaran</span> akibat kebisingan mesin. <span class="font-semibold" style="color: #2E7D32;">Pemeriksaan kesehatan berkala wajib dilakukan.</span></p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-white mt-16" style="background: linear-gradient(135deg, #2E7D32 0%, #1b5e20 100%);">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+      <div class="text-center">
+        <div class="mb-6">
+          <h3 class="text-2xl font-bold mb-2">PT Mulia Farmindo Sejahtera</h3>
+          <p class="text-green-100">Peternakan Ayam Terintegrasi</p>
+        </div>
+        <div class="border-t border-green-700 pt-6">
+          <p class="text-green-100 mb-2">&copy; 2025 PT Mulia Farmindo Sejahtera. All rights reserved.</p>
+          <div class="flex justify-center space-x-6 text-sm">
+            <a href="#" class="text-green-200 hover:text-white transition-colors duration-300">Kebijakan Privasi</a>
+            <span class="text-green-600">|</span>
+            <a href="#" class="text-green-200 hover:text-white transition-colors duration-300">Syarat & Ketentuan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
