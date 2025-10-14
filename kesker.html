@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Keselamatan Kerja - Peternakan</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --green-primary: #2E7D32;
+            --green-dark: #1b5e20;
+            --green-light: #4caf50;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .brand-gradient {
+            background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-dark) 100%);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
+            gap: 1px;
+            background: #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .process-grid .header {
+            font-weight: 600;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--green-primary), var(--green-dark));
+            color: white;
+            text-align: left;
+            font-size: 0.875rem;
+        }
+
+        .process-grid .cell {
+            padding: 1rem;
+            background: white;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .process-grid .cell:hover {
+            background: #f0fdf4;
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 900px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid .header {
+                display: none;
+            }
+
+            .process-grid .cell:hover {
+                transform: translateX(0);
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-4px);
+        }
+
+        .toggle-btn {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .toggle-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: left 0.3s ease;
+        }
+
+        .toggle-btn:hover::before {
+            left: 100%;
+        }
+
+        .toggle-btn:hover {
+            background: linear-gradient(135deg, var(--green-dark) 0%, #155c1a 100%);
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            color: var(--green-dark);
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.7), rgba(21, 94, 117, 0.6));
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 min-h-screen">
+
+    <!-- Header -->
+    <header class="shadow-2xl sticky top-0 z-50" style="background: linear-gradient(135deg, #2E7D32 0%, #1b5e20 100%);">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-white bg-opacity-20 p-2 rounded-lg backdrop-blur-sm">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold tracking-tight text-white">PT Mulia Farmindo Sejahtera</h1>
+                        <p class="text-sm text-green-100">Peternakan Ayam Terintegrasi</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-1">
+                    <a href="index.html"
+                        class="px-5 py-2 rounded-lg hover:bg-white hover:bg-opacity-20 transition-all duration-300 font-medium text-white">Beranda</a>
+                    <a href="kesker.html"
+                        class="px-5 py-2 rounded-lg bg-white bg-opacity-20 backdrop-blur-sm transition-all duration-300 font-medium text-white">Keselamatan
+                        Kerja</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Modern Overlay -->
+    <section class="relative h-80 md:h-96 w-full overflow-hidden">
+        <img src="assets/images/kesker.jpg" alt="Keselamatan Kerja" class="w-full h-full object-cover">
+        <div
+            class="hero-overlay absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+            <div class="badge mb-4 animate-fade-in-up" style="animation-delay: 0.1s;">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd" />
+                </svg>
+                K3 Certified
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-3 animate-fade-in-up"
+                style="animation-delay: 0.2s;">
+                KESELAMATAN KERJA
+            </h1>
+            <p class="text-lg md:text-xl font-semibold text-green-100 animate-fade-in-up"
+                style="animation-delay: 0.3s;">
+                PT MULIA FARMINDO SEJAHTERA
+            </p>
+    </section>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-10 space-y-8">
+
+        <!-- Info Cards with Icons -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card overflow-hidden">
+                <div class="brand-gradient text-white px-6 py-4 flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span class="font-semibold">SOP Kerja Aman</span>
+                </div>
+                <div class="p-6">
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                        SOP khusus wajib untuk pekerjaan berisiko tinggi — dikembangkan dari uraian pengendalian Modul.
+                    </p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span>Prosedur Panen Ayam (Pengangkatan, Pengepakan, Pengangkutan)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span>Prosedur Pengisian Ulang Silo Pakan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span>Prosedur Pembersihan & Sanitasi Kandang</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span>Prosedur Pengecekan Harian Mesin & Ventilasi</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card overflow-hidden">
+                <div class="brand-gradient text-white px-6 py-4 flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <span class="font-semibold">Ergonomi Kerja</span>
+                </div>
+                <div class="p-6">
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Pelatihan teknik angkat & angkut untuk mencegah cedera muskuloskeletal, penting saat panen dan
+                        pemindahan karung pakan.
+                    </p>
+                    <div class="mt-4 p-4 bg-green-50 rounded-lg">
+                        <div class="flex items-center text-green-800 text-sm font-semibold">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            Prioritas Keselamatan Pekerja
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card overflow-hidden">
+                <div class="brand-gradient text-white px-6 py-4 flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <span class="font-semibold">Penanganan Keadaan Darurat</span>
+                </div>
+                <div class="p-6">
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                        Kebakaran, kegagalan ventilasi, kecelakaan kerja — prosedur, titik kumpul, dan kontak darurat.
+                    </p>
+                    <div class="flex items-center justify-between p-3 bg-red-50 rounded-lg">
+                        <span class="text-sm font-medium" style="color: #155c1a;">Hotline Darurat</span>
+                        <span class="text-lg font-bold" style="color: #155c1a;">119</span>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
+                        <span class="text-sm font-medium" style="color: #155c1a;">Tim K3</span>
+                        <span class="text-sm font-bold" style="color: #155c1a;">Ext. 333</span>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- SECTION A -->
+        <section class="card overflow-hidden">
+            <button
+                class="toggle-btn brand-gradient text-white w-full px-6 py-4 font-semibold text-left text-lg flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    <span>A. Peternakan (Pembibitan, Broiler, Petelur)</span>
+                </div>
+                <span class="arrow transition-transform">▼</span>
+            </button>
+            <div class="content p-6 hidden">
+                <div class="process-grid">
+                    <div class="header">Proses Kerja</div>
+                    <div class="header">Jenis Bahaya</div>
+                    <div class="header">Potensi Bahaya Kritis</div>
+                    <div class="header">Jenis Pengendalian K3</div>
+
+                    <div class="cell">Menabur Sekam Kering</div>
+                    <div class="cell">Kesehatan</div>
+                    <div class="cell">Debu sekam menyentuh kulit, iritasi mata.</div>
+                    <div class="cell">APD (Sarung Tangan, Kacamata Goggle)</div>
+
+                    <div class="cell">Pembersihan Kandang</div>
+                    <div class="cell">Kesehatan</div>
+                    <div class="cell">Terhirup disinfektan berbau menyengat.</div>
+                    <div class="cell">APD (Masker Respirator/Ventilasi)</div>
+
+                    <div class="cell">Pengisian Solar/Menyalakan Heater</div>
+                    <div class="cell">Keselamatan</div>
+                    <div class="cell">Solar tercecer ke sekam dan lantai (Kebakaran/Ledakan).</div>
+                    <div class="cell">Substitusi (Gunakan corong/alat penyedot)</div>
+
+                    <div class="cell">Menyalakan Mesin Heater</div>
+                    <div class="cell">Keselamatan</div>
+                    <div class="cell">Korsleting listrik.</div>
+                    <div class="cell">Perancangan (Pengecekan alat/kabel rutin)</div>
+
+                    <div class="cell">Pemberian Pakan ke Ternak</div>
+                    <div class="cell">Keselamatan</div>
+                    <div class="cell">Dipatuk ayam, tidak pakai sepatu safety (Tertusuk).</div>
+                    <div class="cell">APD (Sepatu Safety/Boot K3)</div>
+
+                    <div class="cell">Pemberian Obat/Vaksin</div>
+                    <div class="cell">Kesehatan</div>
+                    <div class="cell">Aroma bahan menyengat/terhirup.</div>
+                    <div class="cell">APD (Masker)</div>
+
+                    <div class="cell">Angkat Pakan/Ternak</div>
+                    <div class="cell">Kesehatan (Ergonomi)</div>
+                    <div class="cell">Beban berat, posisi angkat salah (Nyeri punggung).</div>
+                    <div class="cell">Eliminasi/Administrasi (Gunakan gerobak/Angkat dua orang)</div>
+
+                    <div class="cell">Pembuangan Sisa Vaksin/Obat</div>
+                    <div class="cell">Lingkungan</div>
+                    <div class="cell">Pencemaran lingkungan.</div>
+                    <div class="cell">Substitusi (Prosedur pembuangan B3 yang benar)</div>
+
+                    <div class="cell">Angkat Pakan Melewati Tangga</div>
+                    <div class="cell">Keselamatan (Ergonomi)</div>
+                    <div class="cell">Tangga curam/tidak ada pegangan (Terjatuh).</div>
+                    <div class="cell">Administrasi (Membuat pegangan tangga, batasi beban ekstrem)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION B -->
+        <section class="card overflow-hidden">
+            <button
+                class="toggle-btn brand-gradient text-white w-full px-6 py-4 font-semibold text-left text-lg flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                    <span>B. Gudang Pakan / Silo</span>
+                </div>
+                <span class="arrow transition-transform">▼</span>
+            </button>
+            <div class="content p-6 hidden">
+                <div class="process-grid">
+                    <div class="header">Proses Kerja</div>
+                    <div class="header">Jenis Bahaya</div>
+                    <div class="header">Potensi Bahaya Kritis</div>
+                    <div class="header">Jenis Pengendalian K3</div>
+
+                    <div class="cell">Pengambilan Pakan</div>
+                    <div class="cell">Keselamatan</div>
+                    <div class="cell">Gantungan pada timbangan roboh/terperosok.</div>
+                    <div class="cell">Administrasi (Memilih tempat gantungan yang kokoh).</div>
+
+                    <div class="cell">Bekerja di Ketinggian (Silo)</div>
+                    <div class="cell">Keselamatan</div>
+                    <div class="cell">Terjatuh dari ketinggian.</div>
+                    <div class="cell">Perancangan/APD (Wajib Full Body Harness, izin kerja ketinggian).</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION C -->
+        <section class="card overflow-hidden">
+            <button
+                class="toggle-btn brand-gradient text-white w-full px-6 py-4 font-semibold text-left text-lg flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                    <span>C. Unit Penetasan Telur</span>
+                </div>
+                <span class="arrow transition-transform">▼</span>
+            </button>
+            <div class="content p-6 hidden">
+                <div class="process-grid">
+                    <div class="header">Proses Kerja</div>
+                    <div class="header">Jenis Bahaya</div>
+                    <div class="header">Potensi Bahaya Kritis</div>
+                    <div class="header">Jenis Pengendalian K3</div>
+
+                    <div class="cell">Pembersihan Mesin</div>
+                    <div class="cell">Kesehatan</div>
+                    <div class="cell">Paparan larutan kimia/disinfektan.</div>
+                    <div class="cell">APD (Sarung tangan nitril, Kacamata safety).</div>
+
+                    <div class="cell">Penanganan Biologis</div>
+                    <div class="cell">Kesehatan</div>
+                    <div class="cell">Bio-aerosol, debu dari sisa cangkang telur.</div>
+                    <div class="cell">APD (Masker N95, Jumpsuit steril).</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION D -->
+        <section class="card overflow-hidden">
+            <button
+                class="toggle-btn brand-gradient text-white w-full px-6 py-4 font-semibold text-left text-lg flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                    <span>D. Rumah Potong Ayam (RPA)</span>
+                </div>
+                <span class="arrow transition-transform">▼</span>
+            </button>
+            <div class="content p-6 hidden">
+                <div class="process-grid">
+                    <div class="header">Proses Kerja</div>
+                    <div class="header">Jenis Bahaya</div>
+                    <div class="header">Potensi Bahaya Kritis</div>
+                    <div class="header">Jenis Pengendalian K3</div>
+
+                    <div class="cell">Pencabutan Bulu / Eviserasi</div>
+                    <div class="cell">Keselamatan</div>
+                    <div class="cell">Penggunaan pisau/alat potong tajam (Terpotong).</div>
+                    <div class="cell">APD (Sarung tangan mesh/tahan potong, Sarung tangan Nitril).</div>
+
+                    <div class="cell">Area Lantai Basah</div>
+                    <div class="cell">Keselamatan</div>
+                    <div class="cell">Lantai licin.</div>
+                    <div class="cell">Perancangan/APD (Lantai anti-slip, Sepatu Boot Anti-Slip K3).</div>
+
+                    <div class="cell">Pengoperasian Mesin RPA</div>
+                    <div class="cell">Keselamatan</div>
+                    <div class="cell">Mesin bergerak (Terjepit/terlilit).</div>
+                    <div class="cell">Administrasi (Prosedur LOTO saat maintenance).</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PELATIHAN -->
+        <section class="card overflow-hidden">
+            <button
+                class="toggle-btn brand-gradient text-white w-full px-6 py-4 font-semibold text-left text-lg flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    <span>Pelatihan K3</span>
+                </div>
+                <span class="arrow transition-transform">▼</span>
+            </button>
+            <div class="content p-6 hidden">
+                <p class="text-sm text-gray-600 leading-relaxed mb-4">Jadwal pelatihan wajib tahunan meliputi:</p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span>Pengenalan bahaya spesifik peternakan</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span>Penggunaan APD yang benar</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span>Teknik lifting ergonomis</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span>Simulasi penanganan darurat</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t p-4 text-sm text-gray-600">
+        <div class="max-w-6xl mx-auto text-center">
+            <p>© 2025 Mulia Farmindo Sejahtera. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const arrow = btn.querySelector('.arrow');
+                content.classList.toggle('hidden');
+                arrow.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+
+</html>

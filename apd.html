@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Alat Perlindungan Diri - Peternakan</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --green-primary: #2E7D32;
+            --green-dark: #1b5e20;
+            --green-light: #4caf50;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+        }
+
+        .brand-gradient {
+            background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-dark) 100%);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1.5fr 1fr;
+            gap: 1px;
+            background: #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .process-grid .header {
+            font-weight: 600;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--green-primary), var(--green-dark));
+            color: white;
+            text-align: left;
+            font-size: 0.875rem;
+        }
+
+        .process-grid .cell {
+            padding: 1rem;
+            background: white;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .process-grid .cell:hover {
+            background: #f0fdf4;
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 900px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid .header {
+                display: none;
+            }
+
+            .process-grid .cell:hover {
+                transform: translateX(0);
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-4px);
+        }
+
+        .toggle-btn {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .toggle-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: left 0.3s ease;
+        }
+
+        .toggle-btn:hover::before {
+            left: 100%;
+        }
+
+        .toggle-btn:hover {
+            background: linear-gradient(135deg, var(--green-dark) 0%, #155c1a 100%);
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            color: var(--green-dark);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.7), rgba(21, 94, 117, 0.6));
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border-left: 4px solid var(--green-primary);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 min-h-screen">
+
+    <!-- Header -->
+    <header class="shadow-2xl sticky top-0 z-50" style="background: linear-gradient(135deg, #2E7D32 0%, #1b5e20 100%);">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-white bg-opacity-20 p-2 rounded-lg backdrop-blur-sm">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold tracking-tight text-white">PT Mulia Farmindo Sejahtera</h1>
+                        <p class="text-sm text-green-100">Peternakan Ayam Terintegrasi</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-1">
+                    <a href="index.html"
+                        class="px-5 py-2 rounded-lg hover:bg-white hover:bg-opacity-20 transition-all duration-300 font-medium text-white">Beranda</a>
+                    <a href="apd.html"
+                        class="px-5 py-2 rounded-lg bg-white bg-opacity-20 backdrop-blur-sm transition-all duration-300 font-medium text-white">APD</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Modern Overlay -->
+    <section class="relative h-80 md:h-96 w-full overflow-hidden">
+        <img src="assets/images/apd.jpg" alt="APD " class="w-full h-full object-cover">
+        <div
+            class="hero-overlay absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+            <div class="badge mb-4 animate-fade-in-up" style="animation-delay: 0.1s;">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-3 animate-fade-in-up"
+                style="animation-delay: 0.2s;">
+                ALAT PELINDUNG DIRI (APD)
+            </h1>
+            <p class="text-lg md:text-xl font-semibold text-green-100 animate-fade-in-up"
+                style="animation-delay: 0.3s;">
+                PT MULIA FARMINDO SEJAHTERA
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-10 space-y-8">
+
+        <!-- Prinsip Dasar APD -->
+        <section class="card overflow-hidden">
+            <div class="brand-gradient text-white px-6 py-4 flex items-center space-x-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span class="font-semibold text-lg"> Prinsip Dasar APD</span>
+            </div>
+            <div class="p-6">
+                <div class="info-box">
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        <strong class="text-green-800">APD adalah garis pertahanan terakhir.</strong> Penggunaan APD wajib dan didasarkan pada hasil Analisis Risiko (HIRARC) di setiap area kerja.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- APD Wajib Berdasarkan Area -->
+        <section class="card overflow-hidden">
+            <div class="brand-gradient text-white px-6 py-4 flex items-center space-x-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span class="font-semibold text-lg">APD Wajib Berdasarkan Area</span>
+            </div>
+            <div class="p-6">
+                <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                    Pemilihan APD pada tabel di bawah ini didasarkan pada analisis bahaya lingkungan (Modul 3.1) dan bahaya operasional (Modul 4.1) di setiap unit bisnis Janu Putra Sejahtera.
+                </p>
+
+                <div class="process-grid">
+                    <div class="header">Area Kerja</div>
+                    <div class="header">APD Minimal Wajib</div>
+                    <div class="header">Tujuan Proteksi</div>
+
+                    <div class="cell font-semibold text-green-800">Peternakan Pembibitan (Parent Stock)</div>
+                    <div class="cell">Pakaian/Coverall Steril, Sepatu Boot Khusus, Masker Bedah/N95 (Double Filter), Topi/Hairnet, Sarung Tangan Steril</div>
+                    <div class="cell">Memastikan Biosekuriti tingkat tinggi, melindungi dari infeksi silang dan debu/protein telur.</div>
+
+                    <div class="cell font-semibold text-green-800">Peternakan Broiler (Komersial)</div>
+                    <div class="cell">Masker Respirator (N95/N100), Sepatu Boot K3 (Tahan Air), Kacamata Goggle, Sarung Tangan Kerja</div>
+                    <div class="cell">Melindungi dari Debu, Amonia, dan bahaya fisik operasional harian.</div>
+
+                    <div class="cell font-semibold text-green-800">Peternakan Petelur</div>
+                    <div class="cell">Masker Respirator (terutama saat pembersihan), Sepatu Boot K3, Sarung Tangan Pelindung, Apron (jika kontak dengan cairan pembersih)</div>
+                    <div class="cell">Melindungi dari debu kalsium/pakan, bahaya fisik, dan kontak dengan bahan kimia.</div>
+
+                    <div class="cell font-semibold text-green-800">Unit Penetasan Telur</div>
+                    <div class="cell">Pakaian Steril (Jumpsuit), Masker Bedah/N95, Sepatu Khusus Indoor, Sarung Tangan Nitril</div>
+                    <div class="cell">Memastikan Sterilitas produk, melindungi dari bio-aerosol penetasan dan larutan disinfektan.</div>
+
+                    <div class="cell font-semibold text-green-800">Rumah Potong Ayam (RPA) - Area Basah</div>
+                    <div class="cell">Apron Tahan Air, Sepatu Boot Anti-Slip K3, Sarung Tangan Tahan Potong (Mesh), Pelindung Mata</div>
+                    <div class="cell">Melindungi dari bahaya terpotong, tergelincir, air dingin, dan percikan cairan tubuh hewan.</div>
+
+                    <div class="cell font-semibold text-green-800">Gudang Pakan/Silo</div>
+                    <div class="cell">Helm Keselamatan, Sepatu Safety dengan Steel Toe, Masker Debu</div>
+                    <div class="cell">Melindungi dari kejatuhan benda, terperosok, dan debu pakan.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prosedur Perawatan APD -->
+        <section class="card overflow-hidden">
+            <button
+                class="toggle-btn brand-gradient text-white w-full px-6 py-4 font-semibold text-left text-lg flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span>Prosedur Perawatan APD</span>
+                </div>
+                <span class="arrow transition-transform">▼</span>
+            </button>
+            <div class="content p-6 hidden">
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <div>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                APD harus <strong>dicuci/dibersihkan secara rutin dan didisinfeksi</strong>.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <div>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                Masker respirator harus <strong>diperiksa filter-nya secara berkala</strong>.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <div>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                APD yang <strong>rusak atau kedaluwarsa harus segera dilaporkan dan diganti</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded">
+                    <div class="flex items-start">
+                        <svg class="w-5 h-5 text-yellow-600 mr-2 flex-shrink-0 mt-0.5" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-sm text-yellow-800 font-medium">
+                            Penting: Semua pekerja wajib melaporkan APD yang rusak kepada supervisor sebelum memulai kerja.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t p-4 text-sm text-gray-600 mt-8">
+        <div class="max-w-6xl mx-auto text-center">
+            <p>© 2025 Mulia Farmindo Sejahtera. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const arrow = btn.querySelector('.arrow');
+                content.classList.toggle('hidden');
+                arrow.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+
+</html>
