@@ -5,10 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Denah Fasilitas - Mulia Farmindo Sejahtera</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        // Konfigurasi Tailwind untuk warna konsisten
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#2E7D32', // Hijau Mulia
+                        'secondary-green': '#1b5e20', // Hijau Lebih Tua
+                        'primary-yellow': '#FDD835', // Kuning Aksen
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
+        }
+        /* Style untuk overlay agar teks di Hero terbaca */
+        .hero-overlay {
+            /* Menggunakan warna primary-green dengan opacity 0.75 */
+            background-color: rgba(46, 125, 50, 0.75); 
+            z-index: 10;
         }
         .facility-card {
             transition: all 0.3s ease;
@@ -27,10 +55,25 @@
         .zoom-container:hover .zoom-image {
             transform: scale(1.05);
         }
+        /* Custom animation keyframes */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .active-nav {
+            background-color: #1B5E20; /* Warna hijau lebih gelap untuk indikasi aktif */
+            font-weight: 700;
+        }
+        /* Menghilangkan border dan background yang tidak perlu pada badge, hanya untuk tampilan */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+        }
     </style>
 </head>
+
 <body class="bg-gray-50">
-    <!-- Header -->
+
     <header class="bg-[#2E7D32] shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center space-x-4">
@@ -49,6 +92,10 @@
                 <a href="index.html" class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
                     Beranda
                 </a>
+                
+                <a href="denah.html" class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition active-nav">
+                    Tentang Kami
+                </a>
                 <a href="daskum.html" class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
                     Dasar Hukum
                 </a>
@@ -61,32 +108,228 @@
                 <a href="apd.html" class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
                     APD
                 </a>
-                <a href="denah.html" class="text-white font-semibold px-4 py-2 rounded-lg bg-green-800 transition">
-                    Denah
-                </a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-green-700 to-green-900 text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-5xl font-bold mb-4">Denah Fasilitas Peternakan</h1>
-            <p class="text-xl text-green-100 max-w-3xl mx-auto">
-                Tata letak fasilitas produksi yang terstandar untuk memastikan keselamatan, kesehatan kerja, dan efisiensi operasional di setiap unit produksi kami
+    <section class="relative h-80 md:h-96 w-full overflow-hidden">
+        <img src="assets/images/profile.jpg" alt="Latar Belakang Denah Fasilitas" class="w-full h-full object-cover">
+        
+        <div class="hero-overlay absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+            
+            <div class="badge mb-4 animate-fade-in-up" style="animation-delay: 0.1s; background-color: #FDD835; color: #1b5e20; padding: 6px 12px; border-radius: 9999px; font-weight: 600;">
+                <svg class="w-4 h-4 mr-1 inline-block" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-3.707-9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l6-6a1 1 0 00-1.414-1.414L9 12.586l-1.707-1.707z" clip-rule="evenodd"></path>
+                </svg>
+                TENTANG KAMI
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-3 animate-fade-in-up"
+                style="animation-delay: 0.2s; text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);">
+                PROFIL PERUSAHAAN
+            </h1>
+            
+            <p class="text-lg md:text-xl font-semibold text-gray-100 animate-fade-in-up" style="animation-delay: 0.3s;">
+                VISI, MISI, DAN INTEGRITAS KAMI
             </p>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <section class="py-16">
+    <section class="py-16 bg-white">
         <div class="container mx-auto px-4 max-w-7xl">
             
-            <!-- Fasilitas 1: Brooder & Grower (Ayam Anakan) -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-primary-green mb-4">PROFIL PERUSAHAAN</h2>
+                <p class="text-xl text-gray-700">Visi, Misi, dan Komitmen K3</p>
+                <div class="w-32 h-1 bg-primary-yellow mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary-green text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary-green">Visi Perseroan</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Menjadi perusahaan ayam integrator terkemuka di Indonesia yang memberikan kontribusi positif bagi peternakan ayam dan masyarakat.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary-yellow text-secondary-green rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary-yellow" style="color: #FDD835;">Komitmen K3</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Kami berkomitmen penuh untuk menciptakan lingkungan kerja yang **Aman, Sehat, dan Produktif** melalui penerapan Sistem Manajemen K3 (SMK3) yang terintegrasi dan berkelanjutan. Keselamatan adalah prioritas utama kami.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gray-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4M20 7l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10m0-10l-4-2.25M12 11l-4-2.25M12 11l4-2.25"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Nilai Inti</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Kami menjunjung tinggi integritas, inovasi, kualitas, dan tanggung jawab sosial dalam setiap aspek operasional peternakan kami.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="bg-gradient-to-br from-primary-green to-secondary-green rounded-2xl p-8 shadow-xl mt-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-primary-yellow text-secondary-green rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white">Misi Kami</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div class="bg-white/10 backdrop-blur rounded-xl p-6 border-l-4 border-yellow-400">
+                        <div class="flex items-start space-x-4">
+                            <span class="bg-yellow-400 text-green-900 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">1</span>
+                            <p class="text-green-50">Memberikan produk berkualitas tinggi kepada konsumen.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-xl p-6 border-l-4 border-yellow-400">
+                        <div class="flex items-start space-x-4">
+                            <span class="bg-yellow-400 text-green-900 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">2</span>
+                            <p class="text-green-50">Menjaga kesejahteraan peternak ayam dan meningkatkan produktivitas peternakan.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-xl p-6 border-l-4 border-yellow-400">
+                        <div class="flex items-start space-x-4">
+                            <span class="bg-yellow-400 text-green-900 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">3</span>
+                            <p class="text-green-50">Meningkatkan efisiensi dalam proses kerja dan sistem produksi.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-xl p-6 border-l-4 border-yellow-400">
+                        <div class="flex items-start space-x-4">
+                            <span class="bg-yellow-400 text-green-900 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">4</span>
+                            <p class="text-green-50">Mengadopsi praktik-praktik bisnis yang ramah lingkungan.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-xl p-6 border-l-4 border-yellow-400">
+                        <div class="flex items-start space-x-4">
+                            <span class="bg-yellow-400 text-green-900 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">5</span>
+                            <p class="text-green-50">Mengembangkan program-program sosial yang bermanfaat bagi masyarakat.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-xl p-6 border-l-4 border-yellow-400">
+                        <div class="flex items-start space-x-4">
+                            <span class="bg-yellow-400 text-green-900 font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">6</span>
+                            <p class="text-green-50">Meningkatkan keuntungan perusahaan secara konsisten.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-primary-green mb-4">Produk Utama Perusahaan</h2>
+                <div class="w-24 h-1 bg-primary-green mx-auto"></div>
+                <p class="text-gray-600 mt-4 text-lg">Produk terintegrasi kami mencakup seluruh rantai pasok peternakan.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="assets/images/product/doc-parent.png" alt="DOC Parent Stock" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary-green mb-2">DAY OLD CHICK (DOC)</h4>
+                        <p class="text-sm font-semibold text-green-600 mb-2">Parent Stock</p>
+                        <p class="text-gray-600 text-sm">Bibit ayam indukan berkualitas unggul untuk produksi DOC</p>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="assets/images/product/doc-final.jpg" alt="DOC Final Stock" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary-green mb-2">DAY OLD CHICK (DOC)</h4>
+                        <p class="text-sm font-semibold text-green-600 mb-2">Final Stock</p>
+                        <p class="text-gray-600 text-sm">Bibit ayam untuk pembesaran komersial broiler & layer</p>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="assets/images/product/ayam-hidup.jpg" alt="Ayam Hidup Broiler" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-primary-yellow mb-2">AYAM HIDUP BROILER</h4>
+                        <p class="text-sm font-semibold text-yellow-600 mb-2">Komersial</p>
+                        <p class="text-gray-600 text-sm">Ayam pedaging siap panen dengan bobot optimal 1.8-2.2 kg</p>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="assets/images/product/telur-komersil.jpg" alt="Telur Komersial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-orange-800 mb-2">TELUR KOMERSIAL</h4>
+                        <p class="text-sm font-semibold text-orange-600 mb-2">Konsumsi</p>
+                        <p class="text-gray-600 text-sm">Telur konsumsi segar berkualitas tinggi dari layer</p>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="assets/images/product/karkas-ayam.jpg" alt="Karkas Ayam" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-red-800 mb-2">KARKAS AYAM</h4>
+                        <p class="text-sm font-semibold text-red-600 mb-2">Olahan</p>
+                        <p class="text-gray-600 text-sm">Daging ayam olahan siap distribusi ke pasar</p>
+                    </div>
+                </div>
+
+                <div class="hidden lg:block"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-primary-green mb-4">Peta Fasilitas Produksi</h2>
+                <div class="w-24 h-1 bg-primary-green mx-auto"></div>
+                <p class="text-gray-600 mt-4 text-lg">Detail tata letak dan risiko K3 di setiap unit peternakan.</p>
+            </div>
+            
             <div class="facility-card bg-white rounded-2xl shadow-lg overflow-hidden mb-16">
-                <div class="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-6">
+                <div class="bg-gradient-to-r from-primary-green to-secondary-green text-white px-8 py-6">
                     <div class="flex items-center space-x-4">
-                        <div class="bg-white text-green-700 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold">
+                        <div class="bg-white text-primary-green rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold">
                             1
                         </div>
                         <div>
@@ -98,39 +341,37 @@
 
                 <div class="p-8">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                        <!-- Gambar -->
                         <div class="zoom-container rounded-xl overflow-hidden shadow-lg">
                             <img src="assets/images/denah1.png" alt="Denah Brooder & Grower" class="zoom-image w-full h-auto">
                         </div>
 
-                        <!-- Penjelasan -->
                         <div>
-                            <h3 class="text-2xl font-bold text-green-800 mb-4">Tentang Fasilitas</h3>
+                            <h3 class="text-2xl font-bold text-primary-green mb-4">Tentang Fasilitas</h3>
                             <p class="text-gray-700 mb-6 leading-relaxed">
                                 Fasilitas ini dirancang khusus untuk pemeliharaan anak ayam (DOC) dari umur 0-3 minggu (Brooder) dan 3-6 minggu (Grower). Tata letak mencakup area produksi utama dan fasilitas pendukung yang terintegrasi dengan sistem biosekuriti ketat.
                             </p>
 
-                            <h4 class="text-xl font-bold text-green-700 mb-3">Area Utama:</h4>
+                            <h4 class="text-xl font-bold text-secondary-green mb-3">Area Utama:</h4>
                             <ul class="space-y-3 mb-6">
                                 <li class="flex items-start">
-                                    <span class="bg-green-100 text-green-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="bg-green-100 text-secondary-green rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
                                     <span class="text-gray-700"><strong>Brooder Room (3 Unit):</strong> Kandang pemanas dengan sistem kontrol suhu otomatis untuk DOC 0-21 hari</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="bg-green-100 text-green-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="bg-green-100 text-secondary-green rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
                                     <span class="text-gray-700"><strong>Grower Room (3 Unit):</strong> Kandang pertumbuhan untuk ayam umur 21-42 hari dengan ventilasi natural</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="bg-green-100 text-green-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="bg-green-100 text-secondary-green rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
                                     <span class="text-gray-700"><strong>Hatchery/Binds Rough:</strong> Area penetasan telur dengan inkubator otomatis</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <span class="bg-green-100 text-green-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="bg-green-100 text-secondary-green rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
                                     <span class="text-gray-700"><strong>Vaccination Room:</strong> Ruang vaksinasi steril dengan peralatan medis lengkap</span>
                                 </li>
                             </ul>
 
-                            <h4 class="text-xl font-bold text-green-700 mb-3">Fasilitas Pendukung:</h4>
+                            <h4 class="text-xl font-bold text-secondary-green mb-3">Fasilitas Pendukung:</h4>
                             <ul class="space-y-2 text-gray-700">
                                 <li>• Feed Mill & Storage - Pabrik dan gudang pakan</li>
                                 <li>• Meeting Room & Office - Ruang kerja karyawan</li>
@@ -140,7 +381,7 @@
                                 <li>• Environmental Bioensor Room - Monitoring kualitas udara</li>
                             </ul>
 
-                            <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded">
+                            <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-primary-yellow rounded">
                                 <p class="text-sm text-yellow-800">
                                     <strong>Catatan K3:</strong> Area ini memiliki risiko paparan amonia tinggi, debu organik, dan iklim kerja panas. APD wajib meliputi masker respirator, sarung tangan, dan sepatu boot.
                                 </p>
@@ -150,15 +391,14 @@
                 </div>
             </div>
 
-            <!-- Fasilitas 2: Broiler Production -->
             <div class="facility-card bg-white rounded-2xl shadow-lg overflow-hidden mb-16">
-                <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-8 py-6">
+                <div class="bg-gradient-to-r from-primary-yellow to-yellow-600 text-white px-8 py-6">
                     <div class="flex items-center space-x-4">
-                        <div class="bg-white text-yellow-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold">
+                        <div class="bg-white text-primary-yellow rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold">
                             2
                         </div>
                         <div>
-                            <h2 class="text-3xl font-bold">Broiler Production Facility</h2>
+                            <h2 class="text-3xl font-bold" style="color: #1b5e20;">Broiler Production Facility</h2>
                             <p class="text-yellow-100 text-lg">Fasilitas Produksi Ayam Pedaging (Broiler)</p>
                         </div>
                     </div>
@@ -166,14 +406,12 @@
 
                 <div class="p-8">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                        <!-- Gambar -->
                         <div class="zoom-container rounded-xl overflow-hidden shadow-lg">
                             <img src="assets/images/denah2.png" alt="Denah Broiler Production" class="zoom-image w-full h-auto">
                         </div>
 
-                        <!-- Penjelasan -->
                         <div>
-                            <h3 class="text-2xl font-bold text-yellow-700 mb-4">Tentang Fasilitas</h3>
+                            <h3 class="text-2xl font-bold text-primary-yellow mb-4">Tentang Fasilitas</h3>
                             <p class="text-gray-700 mb-6 leading-relaxed">
                                 Fasilitas produksi ayam broiler skala besar dengan sistem kandang tertutup (closed house) berkapasitas tinggi. Dirancang untuk pertumbuhan optimal ayam pedaging dari umur 1-35 hari hingga siap panen dengan berat ideal 1.8-2.2 kg.
                             </p>
@@ -213,7 +451,7 @@
 
                             <div class="mt-6 p-4 bg-red-50 border-l-4 border-red-400 rounded">
                                 <p class="text-sm text-red-800">
-                                    <strong>Risiko K3 Utama:</strong> Paparan amonia tinggi (>25 ppm), debu organik dari litter, heat stress (suhu >32°C), kebisingan dari exhaust fan (>85 dB). Wajib menggunakan respirator P2/N95, ear plug, dan pakaian kerja tertutup.
+                                    <strong>Risiko K3 Utama:</strong> Paparan amonia tinggi (&gt;25 ppm), debu organik dari litter, heat stress (suhu &gt;32°C), kebisingan dari exhaust fan (&gt;85 dB). Wajib menggunakan **respirator P2/N95, ear plug, dan pakaian kerja tertutup**.
                                 </p>
                             </div>
                         </div>
@@ -221,7 +459,6 @@
                 </div>
             </div>
 
-            <!-- Fasilitas 3: Layer Hens Production -->
             <div class="facility-card bg-white rounded-2xl shadow-lg overflow-hidden mb-16">
                 <div class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-6">
                     <div class="flex items-center space-x-4">
@@ -237,12 +474,10 @@
 
                 <div class="p-8">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                        <!-- Gambar -->
                         <div class="zoom-container rounded-xl overflow-hidden shadow-lg">
                             <img src="assets/images/denah3.png" alt="Denah Layer Hens" class="zoom-image w-full h-auto">
                         </div>
 
-                        <!-- Penjelasan -->
                         <div>
                             <h3 class="text-2xl font-bold text-orange-700 mb-4">Tentang Fasilitas</h3>
                             <p class="text-gray-700 mb-6 leading-relaxed">
@@ -267,11 +502,11 @@
 
                             <h4 class="text-xl font-bold text-orange-600 mb-3">Fasilitas Penunjang:</h4>
                             <ul class="space-y-2 text-gray-700 mb-6">
-                                <li>• <strong>Feed Mill & Storage:</strong> Pabrik dan gudang pakan layer khusus</li>
-                                <li>• <strong>Office & Workers Room:</strong> Ruang administrasi dan istirahat karyawan</li>
-                                <li>• <strong>Exhaust Fans System:</strong> Sistem ventilasi mekanis untuk sirkulasi udara optimal</li>
-                                <li>• <strong>Isolation/Quarantine Pen:</strong> Kandang isolasi untuk ayam sakit</li>
-                                <li>• <strong>Wattics Tank & Pump House:</strong> Sistem air minum dan pencucian telur</li>
+                                <li>• **Feed Mill & Storage:** Pabrik dan gudang pakan layer khusus</li>
+                                <li>• **Office & Workers Room:** Ruang administrasi dan istirahat karyawan</li>
+                                <li>• **Exhaust Fans System:** Sistem ventilasi mekanis untuk sirkulasi udara optimal</li>
+                                <li>• **Isolation/Quarantine Pen:** Kandang isolasi untuk ayam sakit</li>
+                                <li>• **Wattics Tank & Pump House:** Sistem air minum dan pencucian telur</li>
                             </ul>
 
                             <h4 class="text-xl font-bold text-orange-600 mb-3">Egg Processing Area:</h4>
@@ -285,7 +520,7 @@
 
                             <div class="mt-6 p-4 bg-orange-50 border-l-4 border-orange-400 rounded">
                                 <p class="text-sm text-orange-800">
-                                    <strong>Bahaya Spesifik K3:</strong> Paparan amonia dari kotoran ayam (>15 ppm), debu bulu & kotoran kering, ergonomi buruk saat sortir telur manual, risiko zoonosis (Avian Influenza, Salmonella). Wajib APD lengkap termasuk masker N95, sarung tangan food grade, dan hair net.
+                                    <strong>Bahaya Spesifik K3:</strong> Paparan amonia dari kotoran ayam (&gt;15 ppm), debu bulu & kotoran kering, ergonomi buruk saat sortir telur manual, risiko zoonosis (Avian Influenza, Salmonella). Wajib APD lengkap termasuk **masker N95, sarung tangan food grade, dan hair net**.
                                 </p>
                             </div>
 
@@ -299,8 +534,7 @@
                 </div>
             </div>
 
-            <!-- Summary Section -->
-            <div class="bg-gradient-to-r from-green-700 to-green-900 text-white rounded-2xl p-8 shadow-xl">
+            <div class="bg-gradient-to-r from-primary-green to-secondary-green text-white rounded-2xl p-8 shadow-xl">
                 <h3 class="text-3xl font-bold mb-4 text-center">Komitmen K3 Mulia Farmindo</h3>
                 <p class="text-lg text-green-100 text-center max-w-4xl mx-auto mb-8">
                     Semua fasilitas dirancang dengan mempertimbangkan aspek Keselamatan dan Kesehatan Kerja (K3) sesuai PP No. 50 Tahun 2012 tentang Sistem Manajemen K3. Setiap area dilengkapi dengan identifikasi bahaya, prosedur kerja aman, dan APD yang sesuai.
@@ -308,15 +542,15 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                     <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
-                        <div class="text-4xl font-bold text-yellow-400 mb-2">300+</div>
+                        <div class="text-4xl font-bold text-primary-yellow mb-2">300+</div>
                         <p class="text-green-100">Karyawan Terlindungi</p>
                     </div>
                     <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
-                        <div class="text-4xl font-bold text-yellow-400 mb-2">100%</div>
+                        <div class="text-4xl font-bold text-primary-yellow mb-2">100%</div>
                         <p class="text-green-100">Area Terstandar K3</p>
                     </div>
                     <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
-                        <div class="text-4xl font-bold text-yellow-400 mb-2">Zero</div>
+                        <div class="text-4xl font-bold text-primary-yellow mb-2">Zero</div>
                         <p class="text-green-100">Target Kecelakaan Fatal</p>
                     </div>
                 </div>
@@ -325,7 +559,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-gradient-to-br from-green-800 to-green-900 text-white py-16">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -346,26 +579,42 @@
                     <p class="text-green-100 mb-6 leading-relaxed">
                         Perusahaan ayam integrator terkemuka di Indonesia yang berkomitmen memberikan kontribusi positif bagi peternakan ayam dan masyarakat.
                     </p>
+                    <div class="flex space-x-4">
+                        </div>
                 </div>
 
                 <div>
-                    <h4 class="text-xl font-bold mb-6 text-yellow-400">Menu</h4>
+                    <h4 class="text-xl font-bold mb-6 text-primary-yellow">Menu</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html" class="text-green-100 hover:text-yellow-400 transition">Beranda</a></li>
-                        <li><a href="daskum.html" class="text-green-100 hover:text-yellow-400 transition">Dasar Hukum</a></li>
-                        <li><a href="Lingker.html" class="text-green-100 hover:text-yellow-400 transition">Lingkungan Kerja</a></li>
-                        <li><a href="kesker.html" class="text-green-100 hover:text-yellow-400 transition">Keselamatan Kerja</a></li>
-                        <li><a href="apd.html" class="text-green-100 hover:text-yellow-400 transition">APD</a></li>
+                        <li><a href="index.html" class="text-green-100 hover:text-primary-yellow transition">Beranda</a></li>
+                        <li><a href="profil.html" class="text-green-100 hover:text-primary-yellow transition">Profil Perusahaan</a></li>
+                        <li><a href="daskum.html" class="text-green-100 hover:text-primary-yellow transition">Dasar Hukum</a></li>
+                        <li><a href="Lingker.html" class="text-green-100 hover:text-primary-yellow transition">Lingkungan Kerja</a></li>
+                        <li><a href="kesker.html" class="text-green-100 hover:text-primary-yellow transition">Keselamatan Kerja</a></li>
+                        <li><a href="apd.html" class="text-green-100 hover:text-primary-yellow transition">APD</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-xl font-bold mb-6 text-yellow-400">Hubungi Kami</h4>
+                    <h4 class="text-xl font-bold mb-6 text-primary-yellow">Hubungi Kami</h4>
                     <ul class="space-y-4">
                         <li class="flex items-start space-x-3">
+                             <svg class="w-5 h-5 text-primary-yellow mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
                             <span class="text-green-100 text-sm">Malang, Jawa Timur, Indonesia</span>
                         </li>
                         <li class="flex items-start space-x-3">
+                             <svg class="w-5 h-5 text-primary-yellow mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                            <span class="text-green-100 text-sm">+62 XXX XXXX XXXX</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-primary-yellow mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
                             <span class="text-green-100 text-sm">info@muliafarmindosejahtera.com</span>
                         </li>
                     </ul>
@@ -377,6 +626,10 @@
                     <p class="text-green-200 text-sm">
                         &copy; 2025 Mulia Farmindo Sejahtera. All rights reserved.
                     </p>
+                    <div class="flex space-x-6 text-sm mt-4 md:mt-0">
+                         <a href="#" class="text-green-200 hover:text-primary-yellow transition">Kebijakan Privasi</a>
+                         <a href="#" class="text-green-200 hover:text-primary-yellow transition">Syarat & Ketentuan</a>
+                    </div>
                 </div>
             </div>
         </div>

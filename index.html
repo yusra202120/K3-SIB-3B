@@ -52,70 +52,59 @@
     </style>
 </head>
 <body class="bg-white">
-    <!-- Header -->
+
     <header class="bg-[#2E7D32] shadow-md sticky top-0 z-50">
-      <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-        
-        <!-- Kiri: Logo + Nama Perusahaan -->
-        <div class="flex items-center space-x-4">
-          <img 
-            src="assets/images/Logo.png" 
-            alt="Logo PT Mulia Farmindo Sejahtera" 
-            class="w-12 h-12 rounded-full object-cover shadow"
-          >
-          <div class="text-white">
-            <h1 class="text-lg font-bold leading-tight">PT Mulia Farmindo Sejahtera</h1>
-            <p class="text-sm">Peternakan Ayam Terintegrasi</p>
-          </div>
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            
+            <div class="flex items-center space-x-4">
+                <img 
+                    src="assets/images/Logo.png" 
+                    alt="Logo PT Mulia Farmindo Sejahtera" 
+                    class="w-12 h-12 rounded-full object-cover shadow"
+                >
+                <div class="text-white">
+                    <h1 class="text-lg font-bold leading-tight">PT Mulia Farmindo Sejahtera</h1>
+                    <p class="text-sm">Peternakan Ayam Terintegrasi</p>
+                </div>
+            </div>
+
+            <nav>
+                <a href="index.html" 
+                    class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
+                    Beranda
+                </a>
+                <a href="denah.html" 
+                    class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
+                    Tentang Kami
+                </a>
+                <a href="daskum.html" 
+                    class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
+                    Dasar Hukum
+                </a>
+                <a href="Lingker.html" 
+                    class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
+                    Lingkungan Kerja
+                </a>
+                <a href="kesker.html" 
+                    class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
+                    Keselamatan Kerja
+                </a>
+                <a href="apd.html" 
+                    class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
+                    APD
+                </a>
+            </nav>
         </div>
-  
-        <!-- Kanan: Menu -->
-       <nav>
-  <a href="index.html" 
-     class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
-    Beranda
-  </a>
-  <a href="daskum.html" 
-     class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
-    Dasar Hukum
-  </a>
-  <a href="Lingker.html" 
-   class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
-   Lingkungan Kerja
-</a>
- <a href="kesker.html" 
-   class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
-   Keselamatan Kerja
-</a>
- <a href="apd.html" 
-   class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
-   APD
-</a>
- <a href="denah.html" 
-   class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
-   Denah
-</a>
-
-</nav>
-  
-  
-      </div>
     </header>
-  </body>
-  
-      
-
-    <!-- Hero Slider -->
+    
     <section class="slider-container">
         <div class="relative">
             <img src="assets/images/1.jpg" alt="Peternakan Ayam 1" class="slider-image active">
             <img src="assets/images/2.png" alt="Peternakan Ayam 2" class="slider-image">
             <img src="assets/images/3.png" alt="Peternakan Ayam 3" class="slider-image">
             
-            <!-- Overlay -->
             <div class="absolute inset-0 bg-black bg-opacity-30"></div>
             
-            <!-- Navigation Buttons -->
             <button onclick="prevSlide()" class="nav-button absolute left-4 top-1/2 transform -translate-y-1/2 bg-green-700 bg-opacity-70 text-white p-3 rounded-full">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -127,7 +116,6 @@
                 </svg>
             </button>
             
-            <!-- Dots Indicator -->
             <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
                 <span class="dot w-3 h-3 rounded-full bg-white cursor-pointer" onclick="currentSlide(0)"></span>
                 <span class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 cursor-pointer" onclick="currentSlide(1)"></span>
@@ -136,109 +124,99 @@
         </div>
     </section>
 
-    <!-- About Section -->
-<section class="py-20 bg-gradient-to-b from-white to-green-50">
-    <div class="container mx-auto px-6 lg:px-16 flex flex-col md:flex-row items-center gap-10">
-      
-      <!-- Gambar di kiri -->
-      <div class="md:w-1/2">
-        <img src="assets/images/about-farmindo.jpg" alt="Mulia Farmindo Sejahtera" class="rounded-2xl shadow-lg w-full">
-      </div>
-  
-      <!-- Teks di kanan -->
-      <div class="md:w-1/2 text-center md:text-left">
-        <h2 class="text-4xl font-bold text-green-800 mb-6">
-          Mulia Farmindo Sejahtera
-        </h2>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          Mulia Farmindo Sejahtera berkomitmen untuk menjadi perusahaan ayam integrator terkemuka di Indonesia yang tidak hanya unggul dalam produk (DOC, Ayam Hidup, Karkas, Telur), tetapi juga menjamin terciptanya lingkungan kerja yang Aman, Sehat, dan Produktif bagi seluruh 300+ karyawan kami.
-          Keselamatan dan Kesehatan Kerja (K3) adalah prioritas utama dan merupakan bagian tak terpisahkan dari Visi dan Misi perusahaan.
-        </p>
-      </div>
-  
-    </div>
-  </section>
-  
+    <section class="py-20 bg-gradient-to-b from-white to-green-50">
+        <div class="container mx-auto px-6 lg:px-16 flex flex-col md:flex-row items-center gap-10">
+            
+            <div class="md:w-1/2">
+                <img src="assets/images/about-farmindo.jpg" alt="Mulia Farmindo Sejahtera" class="rounded-2xl shadow-lg w-full">
+            </div>
 
-    <!-- Modul K3 Section -->
-<section class="py-20 bg-gradient-to-b from-white to-green-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-green-800 mb-4">Mengapa K3 Penting Bagi Kami?</h2>
-        <p class="text-lg text-gray-600 max-w-4xl mx-auto">
-          Kami beroperasi di berbagai area yang berisiko tinggi (kandang, penetasan, RPA, silo pakan)
-          yang melibatkan bahaya fisik, mekanis, elektrikal, dan biologis. Oleh karena itu, penerapan
-          SMK3 (Sistem Manajemen K3) berdasarkan <strong>PP No. 50 Tahun 2012</strong> adalah kewajiban
-          yang kami laksanakan secara konsisten.
-        </p>
-      </div>
-  
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-        
-        <!-- Modul 1 -->
-        <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-700">
-          <h3 class="text-xl font-bold text-green-800 mb-3">Dasar Hukum (Modul 1)</h3>
-          <p class="text-gray-600 mb-4">
-            Landasan legal (UU No. 1/1970) dan kewajiban perusahaan, manajer, serta pekerja dalam
-            mematuhi regulasi K3.
-          </p>
-          <a href="#" class="inline-block mt-2 text-green-700 font-semibold hover:text-green-900">
-            [LIHAT REGULASI]
-          </a>
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-4xl font-bold text-green-800 mb-6">
+                    Mulia Farmindo Sejahtera
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Mulia Farmindo Sejahtera berkomitmen untuk menjadi perusahaan ayam integrator terkemuka di Indonesia yang tidak hanya unggul dalam produk (DOC, Ayam Hidup, Karkas, Telur), tetapi juga menjamin terciptanya lingkungan kerja yang Aman, Sehat, dan Produktif bagi seluruh 300+ karyawan kami.
+                    Keselamatan dan Kesehatan Kerja (K3) adalah prioritas utama dan merupakan bagian tak terpisahkan dari Visi dan Misi perusahaan.
+                </p>
+            </div>
         </div>
-  
-        <!-- Modul 2 -->
-        <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-yellow-400">
-          <h3 class="text-xl font-bold text-green-800 mb-3">Lingkungan Kerja (Modul 2)</h3>
-          <p class="text-gray-600 mb-4">
-            Identifikasi dan pengendalian bahaya kesehatan kritis, termasuk Amonia, Debu Organik,
-            Iklim Kerja, dan Protokol Biosekuriti untuk mencegah Zoonosis.
-          </p>
-          <a href="#" class="inline-block mt-2 text-green-700 font-semibold hover:text-green-900">
-            [BAHAYA LINGKUNGAN]
-          </a>
-        </div>
-  
-        <!-- Modul 3 -->
-        <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-700">
-          <h3 class="text-xl font-bold text-green-800 mb-3">Keselamatan Kerja (Modul 3)</h3>
-          <p class="text-gray-600 mb-4">
-            Analisis Bahaya Operasional spesifik per area (RPA, Kandang), SOP Kerja Aman, Ergonomi,
-            dan Prosedur Tanggap Darurat (Kebakaran, Kegagalan Ventilasi).
-          </p>
-          <a href="#" class="inline-block mt-2 text-green-700 font-semibold hover:text-green-900">
-            [PROSEDUR & SOP]
-          </a>
-        </div>
-  
-        <!-- Modul 4 -->
-        <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-yellow-400">
-          <h3 class="text-xl font-bold text-green-800 mb-3">APD & Proteksi Diri (Modul 4)</h3>
-          <p class="text-gray-600 mb-4">
-            Rincian APD wajib yang disesuaikan per area kerja (Pembibitan, Broiler, RPA) sebagai lini
-            pertahanan terakhir pekerja.
-          </p>
-          <a href="#" class="inline-block mt-2 text-green-700 font-semibold hover:text-green-900">
-            [DAFTAR APD]
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-    <!-- Footer -->
+    <section class="py-20 bg-gradient-to-b from-white to-green-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-green-800 mb-4">Mengapa K3 Penting Bagi Kami?</h2>
+                <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+                    Kami beroperasi di berbagai area yang berisiko tinggi (kandang, penetasan, RPA, silo pakan)
+                    yang melibatkan bahaya fisik, mekanis, elektrikal, dan biologis. Oleh karena itu, penerapan
+                    SMK3 (Sistem Manajemen K3) berdasarkan <strong>PP No. 50 Tahun 2012</strong> adalah kewajiban
+                    yang kami laksanakan secara konsisten.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-700">
+                    <h3 class="text-xl font-bold text-green-800 mb-3">Dasar Hukum </h3>
+                    <p class="text-gray-600 mb-4">
+                        Landasan legal (UU No. 1/1970) dan kewajiban perusahaan, manajer, serta pekerja dalam
+                        mematuhi regulasi K3.
+                    </p>
+                    <a href="#" class="inline-block mt-2 text-green-700 font-semibold hover:text-green-900">
+                        
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-yellow-400">
+                    <h3 class="text-xl font-bold text-green-800 mb-3">Lingkungan Kerja </h3>
+                    <p class="text-gray-600 mb-4">
+                        Identifikasi dan pengendalian bahaya kesehatan kritis, termasuk Amonia, Debu Organik,
+                        Iklim Kerja, dan Protokol Biosekuriti untuk mencegah Zoonosis.
+                    </p>
+                    <a href="#" class="inline-block mt-2 text-green-700 font-semibold hover:text-green-900">
+                        
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-700">
+                    <h3 class="text-xl font-bold text-green-800 mb-3">Keselamatan Kerja </h3>
+                    <p class="text-gray-600 mb-4">
+                        Analisis Bahaya Operasional spesifik per area (RPA, Kandang), SOP Kerja Aman, Ergonomi,
+                        dan Prosedur Tanggap Darurat (Kebakaran, Kegagalan Ventilasi).
+                    </p>
+                    <a href="#" class="inline-block mt-2 text-green-700 font-semibold hover:text-green-900">
+                        
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-yellow-400">
+                    <h3 class="text-xl font-bold text-green-800 mb-3">APD & Proteksi Diri </h3>
+                    <p class="text-gray-600 mb-4">
+                        Rincian APD wajib yang disesuaikan per area kerja (Pembibitan, Broiler, RPA) sebagai lini
+                        pertahanan terakhir pekerja.
+                    </p>
+                    <a href="#" class="inline-block mt-2 text-green-700 font-semibold hover:text-green-900">
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-gradient-to-br from-green-800 to-green-900 text-white py-16">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <!-- Company Info -->
+                
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center space-x-3 mb-6">
                         <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center">
                             <img 
-                            src="assets/images/Logo.png" 
-                            alt="Logo PT Mulia Farmindo Sejahtera" 
-                            class="w-12 h-12 rounded-full object-cover shadow"
-                          >                        </div>
+                                src="assets/images/Logo.png" 
+                                alt="Logo PT Mulia Farmindo Sejahtera" 
+                                class="w-12 h-12 rounded-full object-cover shadow"
+                            >
+                        </div>
                         <div>
                             <h3 class="text-2xl font-bold">PT Mulia Farmindo Sejahtera</h3>
                             <p class="text-green-200 text-sm">Peternakan Ayam Terintegrasi</p>
@@ -266,19 +244,18 @@
                     </div>
                 </div>
 
-                <!-- Quick Links -->
                 <div>
-                    <h4 class="text-xl font-bold mb-6 text-yellow-400">Menu</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-green-100 hover:text-yellow-400 transition">Beranda</a></li>
-                        <li><a href="#" class="text-green-100 hover:text-yellow-400 transition">Tentang Kami</a></li>
-                        <li><a href="#" class="text-green-100 hover:text-yellow-400 transition">Produk</a></li>
-                        <li><a href="#" class="text-green-100 hover:text-yellow-400 transition">Karir</a></li>
-                        <li><a href="#" class="text-green-100 hover:text-yellow-400 transition">Kontak</a></li>
-                    </ul>
-                </div>
+                  <h4 class="text-xl font-bold mb-6 text-primary-yellow">Menu</h4>
+                  <ul class="space-y-3">
+                      <li><a href="index.html" class="text-green-100 hover:text-primary-yellow transition">Beranda</a></li>
+                      <li><a href="profil.html" class="text-green-100 hover:text-primary-yellow transition">Profil Perusahaan</a></li>
+                      <li><a href="daskum.html" class="text-green-100 hover:text-primary-yellow transition">Dasar Hukum</a></li>
+                      <li><a href="Lingker.html" class="text-green-100 hover:text-primary-yellow transition">Lingkungan Kerja</a></li>
+                      <li><a href="kesker.html" class="text-green-100 hover:text-primary-yellow transition">Keselamatan Kerja</a></li>
+                      <li><a href="apd.html" class="text-green-100 hover:text-primary-yellow transition">APD</a></li>
+                  </ul>
+              </div>
 
-                <!-- Contact Info -->
                 <div>
                     <h4 class="text-xl font-bold mb-6 text-yellow-400">Hubungi Kami</h4>
                     <ul class="space-y-4">
@@ -305,7 +282,6 @@
                 </div>
             </div>
 
-            <!-- Bottom Footer -->
             <div class="border-t border-green-700 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                     <p class="text-green-200 text-sm">
