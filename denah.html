@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denah Fasilitas - Mulia Farmindo Sejahtera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .facility-card {
+            transition: all 0.3s ease;
+        }
+        .facility-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .zoom-container {
+            overflow: hidden;
+            cursor: zoom-in;
+        }
+        .zoom-image {
+            transition: transform 0.3s ease;
+        }
+        .zoom-container:hover .zoom-image {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-[#2E7D32] shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <img 
+                    src="assets/images/Logo.png" 
+                    alt="Logo PT Mulia Farmindo Sejahtera" 
+                    class="w-12 h-12 rounded-full object-cover shadow"
+                >
+                <div class="text-white">
+                    <h1 class="text-lg font-bold leading-tight">PT Mulia Farmindo Sejahtera</h1>
+                    <p class="text-sm">Peternakan Ayam Terintegrasi</p>
+                </div>
+            </div>
+
+            <nav>
+                <a href="index.html" class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
+                    Beranda
+                </a>
+                <a href="daskum.html" class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
+                    Dasar Hukum
+                </a>
+                <a href="Lingker.html" class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
+                    Lingkungan Kerja
+                </a>
+                <a href="kesker.html" class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
+                    Keselamatan Kerja
+                </a>
+                <a href="apd.html" class="text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-800 transition">
+                    APD
+                </a>
+                <a href="denah.html" class="text-white font-semibold px-4 py-2 rounded-lg bg-green-800 transition">
+                    Denah
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-green-700 to-green-900 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-4">Denah Fasilitas Peternakan</h1>
+            <p class="text-xl text-green-100 max-w-3xl mx-auto">
+                Tata letak fasilitas produksi yang terstandar untuk memastikan keselamatan, kesehatan kerja, dan efisiensi operasional di setiap unit produksi kami
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 max-w-7xl">
+            
+            <!-- Fasilitas 1: Brooder & Grower (Ayam Anakan) -->
+            <div class="facility-card bg-white rounded-2xl shadow-lg overflow-hidden mb-16">
+                <div class="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-white text-green-700 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold">
+                            1
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold">Chickens House - Brooder & Grower Facility</h2>
+                            <p class="text-green-100 text-lg">Fasilitas Pembibitan Ayam Anakan (DOC - Day Old Chicks)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                        <!-- Gambar -->
+                        <div class="zoom-container rounded-xl overflow-hidden shadow-lg">
+                            <img src="assets/images/denah1.png" alt="Denah Brooder & Grower" class="zoom-image w-full h-auto">
+                        </div>
+
+                        <!-- Penjelasan -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-800 mb-4">Tentang Fasilitas</h3>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Fasilitas ini dirancang khusus untuk pemeliharaan anak ayam (DOC) dari umur 0-3 minggu (Brooder) dan 3-6 minggu (Grower). Tata letak mencakup area produksi utama dan fasilitas pendukung yang terintegrasi dengan sistem biosekuriti ketat.
+                            </p>
+
+                            <h4 class="text-xl font-bold text-green-700 mb-3">Area Utama:</h4>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start">
+                                    <span class="bg-green-100 text-green-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="text-gray-700"><strong>Brooder Room (3 Unit):</strong> Kandang pemanas dengan sistem kontrol suhu otomatis untuk DOC 0-21 hari</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-green-100 text-green-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="text-gray-700"><strong>Grower Room (3 Unit):</strong> Kandang pertumbuhan untuk ayam umur 21-42 hari dengan ventilasi natural</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-green-100 text-green-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="text-gray-700"><strong>Hatchery/Binds Rough:</strong> Area penetasan telur dengan inkubator otomatis</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-green-100 text-green-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="text-gray-700"><strong>Vaccination Room:</strong> Ruang vaksinasi steril dengan peralatan medis lengkap</span>
+                                </li>
+                            </ul>
+
+                            <h4 class="text-xl font-bold text-green-700 mb-3">Fasilitas Pendukung:</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• Feed Mill & Storage - Pabrik dan gudang pakan</li>
+                                <li>• Meeting Room & Office - Ruang kerja karyawan</li>
+                                <li>• Sanitation Area & Foot Bath - Area sanitasi biosekuriti</li>
+                                <li>• Waste Disposal - Pengelolaan limbah organik</li>
+                                <li>• Water Tank & Pump House - Sumber air bersih</li>
+                                <li>• Environmental Bioensor Room - Monitoring kualitas udara</li>
+                            </ul>
+
+                            <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded">
+                                <p class="text-sm text-yellow-800">
+                                    <strong>Catatan K3:</strong> Area ini memiliki risiko paparan amonia tinggi, debu organik, dan iklim kerja panas. APD wajib meliputi masker respirator, sarung tangan, dan sepatu boot.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fasilitas 2: Broiler Production -->
+            <div class="facility-card bg-white rounded-2xl shadow-lg overflow-hidden mb-16">
+                <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-8 py-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-white text-yellow-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold">
+                            2
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold">Broiler Production Facility</h2>
+                            <p class="text-yellow-100 text-lg">Fasilitas Produksi Ayam Pedaging (Broiler)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                        <!-- Gambar -->
+                        <div class="zoom-container rounded-xl overflow-hidden shadow-lg">
+                            <img src="assets/images/denah2.png" alt="Denah Broiler Production" class="zoom-image w-full h-auto">
+                        </div>
+
+                        <!-- Penjelasan -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-yellow-700 mb-4">Tentang Fasilitas</h3>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Fasilitas produksi ayam broiler skala besar dengan sistem kandang tertutup (closed house) berkapasitas tinggi. Dirancang untuk pertumbuhan optimal ayam pedaging dari umur 1-35 hari hingga siap panen dengan berat ideal 1.8-2.2 kg.
+                            </p>
+
+                            <h4 class="text-xl font-bold text-yellow-600 mb-3">Area Produksi:</h4>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start">
+                                    <span class="bg-yellow-100 text-yellow-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="text-gray-700"><strong>4 Unit Closed House:</strong> Kandang modern dengan sistem otomatis (feeding, drinking, cooling pad, exhaust fan)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-yellow-100 text-yellow-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="text-gray-700"><strong>Holding Area/De-Farming Pad:</strong> Area penampungan sementara sebelum pengiriman ke RPA</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-yellow-100 text-yellow-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="text-gray-700"><strong>Canteen:</strong> Area istirahat dan makan karyawan terpisah dari area produksi</span>
+                                </li>
+                            </ul>
+
+                            <h4 class="text-xl font-bold text-yellow-600 mb-3">Sistem & Teknologi:</h4>
+                            <ul class="space-y-2 text-gray-700 mb-6">
+                                <li>• Sistem ventilasi cross-ventilation dengan cooling pad</li>
+                                <li>• Automated feeding system dengan silo pakan berkapasitas besar</li>
+                                <li>• Water nipple system untuk distribusi air minum otomatis</li>
+                                <li>• Generator & Equipment room untuk backup power</li>
+                                <li>• Waste disposal & channing room untuk sanitasi peralatan</li>
+                            </ul>
+
+                            <h4 class="text-xl font-bold text-yellow-600 mb-3">Fasilitas Pendukung K3:</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• Sanitation area & foot bath di setiap pintu masuk</li>
+                                <li>• Office & workers room dengan fasilitas ganti pakaian</li>
+                                <li>• Water tank & pump house untuk kebutuhan air produksi</li>
+                                <li>• Meeting room untuk briefing operasional harian</li>
+                            </ul>
+
+                            <div class="mt-6 p-4 bg-red-50 border-l-4 border-red-400 rounded">
+                                <p class="text-sm text-red-800">
+                                    <strong>Risiko K3 Utama:</strong> Paparan amonia tinggi (>25 ppm), debu organik dari litter, heat stress (suhu >32°C), kebisingan dari exhaust fan (>85 dB). Wajib menggunakan respirator P2/N95, ear plug, dan pakaian kerja tertutup.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fasilitas 3: Layer Hens Production -->
+            <div class="facility-card bg-white rounded-2xl shadow-lg overflow-hidden mb-16">
+                <div class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-white text-orange-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold">
+                            3
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold">Layer Hens Production Facility</h2>
+                            <p class="text-orange-100 text-lg">Fasilitas Produksi Ayam Petelur (Layer)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                        <!-- Gambar -->
+                        <div class="zoom-container rounded-xl overflow-hidden shadow-lg">
+                            <img src="assets/images/denah3.png" alt="Denah Layer Hens" class="zoom-image w-full h-auto">
+                        </div>
+
+                        <!-- Penjelasan -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-orange-700 mb-4">Tentang Fasilitas</h3>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                Kompleks produksi telur konsumsi terintegrasi dengan sistem kandang baterai (battery cage) modern. Fasilitas ini mengelola ayam petelur dari umur 18 minggu hingga 80 minggu dengan target produksi telur harian mencapai 85-90% dari populasi.
+                            </p>
+
+                            <h4 class="text-xl font-bold text-orange-600 mb-3">Area Produksi Utama:</h4>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start">
+                                    <span class="bg-orange-100 text-orange-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="text-gray-700"><strong>4 Unit Layer Hens House:</strong> Kandang baterai 4 tingkat dengan sistem automatic egg collection</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-orange-100 text-orange-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="text-gray-700"><strong>Egg Processing & Packing:</strong> Fasilitas sortir, grading, dan pengemasan telur dengan standar food safety</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-orange-100 text-orange-700 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">✓</span>
+                                    <span class="text-gray-700"><strong>Automated Egg Collection & Storage:</strong> Sistem pengumpulan telur otomatis dengan ruang penyimpanan berpendingin</span>
+                                </li>
+                            </ul>
+
+                            <h4 class="text-xl font-bold text-orange-600 mb-3">Fasilitas Penunjang:</h4>
+                            <ul class="space-y-2 text-gray-700 mb-6">
+                                <li>• <strong>Feed Mill & Storage:</strong> Pabrik dan gudang pakan layer khusus</li>
+                                <li>• <strong>Office & Workers Room:</strong> Ruang administrasi dan istirahat karyawan</li>
+                                <li>• <strong>Exhaust Fans System:</strong> Sistem ventilasi mekanis untuk sirkulasi udara optimal</li>
+                                <li>• <strong>Isolation/Quarantine Pen:</strong> Kandang isolasi untuk ayam sakit</li>
+                                <li>• <strong>Wattics Tank & Pump House:</strong> Sistem air minum dan pencucian telur</li>
+                            </ul>
+
+                            <h4 class="text-xl font-bold text-orange-600 mb-3">Egg Processing Area:</h4>
+                            <ul class="space-y-2 text-gray-700 mb-6">
+                                <li>• Candling & grading machine - Sortir berdasarkan ukuran & kualitas</li>
+                                <li>• Washing & sanitizing station - Pembersihan telur otomatis</li>
+                                <li>• Packing area - Pengemasan dalam tray/karton</li>
+                                <li>• Cold storage - Ruang dingin untuk menjaga kesegaran</li>
+                                <li>• Loading dock - Area muat telur ke kendaraan distribusi</li>
+                            </ul>
+
+                            <div class="mt-6 p-4 bg-orange-50 border-l-4 border-orange-400 rounded">
+                                <p class="text-sm text-orange-800">
+                                    <strong>Bahaya Spesifik K3:</strong> Paparan amonia dari kotoran ayam (>15 ppm), debu bulu & kotoran kering, ergonomi buruk saat sortir telur manual, risiko zoonosis (Avian Influenza, Salmonella). Wajib APD lengkap termasuk masker N95, sarung tangan food grade, dan hair net.
+                                </p>
+                            </div>
+
+                            <div class="mt-4 p-4 bg-green-50 border-l-4 border-green-400 rounded">
+                                <p class="text-sm text-green-800">
+                                    <strong>Protokol Biosekuriti:</strong> Semua pekerja dan pengunjung wajib melalui sanitation area, foot bath, dan mengganti pakaian kerja khusus sebelum memasuki area produksi. Area egg processing menerapkan standar food safety HACCP.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="bg-gradient-to-r from-green-700 to-green-900 text-white rounded-2xl p-8 shadow-xl">
+                <h3 class="text-3xl font-bold mb-4 text-center">Komitmen K3 Mulia Farmindo</h3>
+                <p class="text-lg text-green-100 text-center max-w-4xl mx-auto mb-8">
+                    Semua fasilitas dirancang dengan mempertimbangkan aspek Keselamatan dan Kesehatan Kerja (K3) sesuai PP No. 50 Tahun 2012 tentang Sistem Manajemen K3. Setiap area dilengkapi dengan identifikasi bahaya, prosedur kerja aman, dan APD yang sesuai.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
+                        <div class="text-4xl font-bold text-yellow-400 mb-2">300+</div>
+                        <p class="text-green-100">Karyawan Terlindungi</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
+                        <div class="text-4xl font-bold text-yellow-400 mb-2">100%</div>
+                        <p class="text-green-100">Area Terstandar K3</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
+                        <div class="text-4xl font-bold text-yellow-400 mb-2">Zero</div>
+                        <p class="text-green-100">Target Kecelakaan Fatal</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-green-800 to-green-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center">
+                            <img 
+                                src="assets/images/Logo.png" 
+                                alt="Logo PT Mulia Farmindo Sejahtera" 
+                                class="w-12 h-12 rounded-full object-cover shadow"
+                            >
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">PT Mulia Farmindo Sejahtera</h3>
+                            <p class="text-green-200 text-sm">Peternakan Ayam Terintegrasi</p>
+                        </div>
+                    </div>
+                    <p class="text-green-100 mb-6 leading-relaxed">
+                        Perusahaan ayam integrator terkemuka di Indonesia yang berkomitmen memberikan kontribusi positif bagi peternakan ayam dan masyarakat.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-yellow-400">Menu</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-green-100 hover:text-yellow-400 transition">Beranda</a></li>
+                        <li><a href="daskum.html" class="text-green-100 hover:text-yellow-400 transition">Dasar Hukum</a></li>
+                        <li><a href="Lingker.html" class="text-green-100 hover:text-yellow-400 transition">Lingkungan Kerja</a></li>
+                        <li><a href="kesker.html" class="text-green-100 hover:text-yellow-400 transition">Keselamatan Kerja</a></li>
+                        <li><a href="apd.html" class="text-green-100 hover:text-yellow-400 transition">APD</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-yellow-400">Hubungi Kami</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-100 text-sm">Malang, Jawa Timur, Indonesia</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="text-green-100 text-sm">info@muliafarmindosejahtera.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-green-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-green-200 text-sm">
+                        &copy; 2025 Mulia Farmindo Sejahtera. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
