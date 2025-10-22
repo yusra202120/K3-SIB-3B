@@ -574,6 +574,108 @@
                 </ul>
             </div>
         </section>
+        
+        <section class="card overflow-hidden">
+            <button
+                class="toggle-btn brand-gradient text-white w-full px-6 py-4 font-semibold text-left text-lg flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                    <span>E. P3K (Pertolongan Pertama Pada Kecelakaan)</span>
+                </div>
+                <span class="arrow transition-transform">▼</span>
+            </button>
+            <div class="content p-6 hidden">
+                <div class="mb-6 p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-lg border-l-4 border-red-500">
+                    <h3 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <svg class="w-5 h-5 text-red-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                        </svg>
+                        Fasilitas P3K Tersedia di:
+                    </h3>
+                    <ul class="text-sm text-gray-700 space-y-1 ml-7">
+                        <li>• Setiap area kerja utama (Kandang, RPA, Gudang)</li>
+                        <li>• Kantor Administrasi & Ruang Supervisor</li>
+                        <li>• Kendaraan operasional perusahaan</li>
+                    </ul>
+                </div>
+
+                <div class="process-grid">
+                    <div class="header">Jenis Kecelakaan</div>
+                    <div class="header">Tindakan P3K</div>
+                    <div class="header">Peralatan P3K</div>
+                    <div class="header">Tindak Lanjut</div>
+
+                    <div class="cell">Luka Potong/Sayat (Pisau RPA, Alat Tajam)</div>
+                    <div class="cell">Hentikan pendarahan, bersihkan luka dengan antiseptik, tutup dengan kasa steril.</div>
+                    <div class="cell">Kasa steril, plester, antiseptik (povidone iodine), perban elastis.</div>
+                    <div class="cell">Jika luka dalam/pendarahan tidak berhenti → Rujuk ke klinik/RS.</div>
+
+                    <div class="cell">Terjepit/Terbentur Mesin</div>
+                    <div class="cell">Hentikan mesin (LOTO), kompres es pada area bengkak, imobilisasi jika dicurigai patah tulang.</div>
+                    <div class="cell">Instant cold pack, bidai imobilisasi, perban segitiga.</div>
+                    <div class="cell">Rujuk ke RS untuk pemeriksaan rontgen dan penanganan lebih lanjut.</div>
+
+                    <div class="cell">Iritasi Mata (Debu, Disinfektan)</div>
+                    <div class="cell">Bilas mata dengan air mengalir atau eye wash selama 15 menit, jangan mengucek mata.</div>
+                    <div class="cell">Eye wash station/botol, kacamata pelindung cadangan.</div>
+                    <div class="cell">Jika iritasi berlanjut/penglihatan kabur → Rujuk ke dokter mata.</div>
+
+                    <div class="cell">Paparan Kimia Kulit (Disinfektan, Solar)</div>
+                    <div class="cell">Lepaskan pakaian terkontaminasi, bilas kulit dengan air mengalir minimal 20 menit.</div>
+                    <div class="cell">Safety shower/selang air, sabun netral, handuk bersih.</div>
+                    <div class="cell">Dokumentasikan jenis bahan kimia → Rujuk ke klinik jika muncul luka bakar kimia.</div>
+
+                    <div class="cell">Terhirup Gas/Uap Berbahaya (Amonia, Gas Heater)</div>
+                    <div class="cell">Pindahkan korban ke area terbuka/udara segar, longgarkan pakaian, beri posisi setengah duduk.</div>
+                    <div class="cell">Oksigen portable (jika tersedia), masker respirator cadangan.</div>
+                    <div class="cell">Jika sesak napas berlanjut/pusing → Panggil ambulans, berikan oksigen.</div>
+
+                    <div class="cell">Terjatuh dari Ketinggian (Silo, Tangga)</div>
+                    <div class="cell">Jangan pindahkan korban, cek kesadaran & pernapasan, imobilisasi leher & tulang belakang.</div>
+                    <div class="cell">Cervical collar, spinal board, selimut emergency.</div>
+                    <div class="cell">SEGERA panggil ambulans (119) → Evakuasi hanya oleh tim medis terlatih.</div>
+
+                    <div class="cell">Heat Stroke (Kelelahan Panas)</div>
+                    <div class="cell">Pindahkan ke tempat sejuk, kompres dingin pada leher/dahi/ketiak, beri minum bertahap jika sadar.</div>
+                    <div class="cell">Kompres dingin, handuk basah, minuman elektrolit/oralit.</div>
+                    <div class="cell">Jika suhu tubuh sangat tinggi/tidak sadar → Rujuk ke RS untuk penanganan hipetermia.</div>
+
+                    <div class="cell">Patukan/Cakaran Ayam</div>
+                    <div class="cell">Cuci luka dengan sabun & air mengalir, beri antiseptik, tutup dengan kasa steril.</div>
+                    <div class="cell">Sabun antiseptik, antiseptik, kasa steril, plester.</div>
+                    <div class="cell">Cek status vaksin tetanus pekerja → Vaksinasi booster jika perlu.</div>
+
+                    <div class="cell">Luka Bakar (Heater, Air Panas)</div>
+                    <div class="cell">Aliri dengan air dingin (bukan es) selama 10-20 menit, jangan pecahkan lepuhan, tutup dengan kasa steril.</div>
+                    <div class="cell">Burn gel/salep luka bakar, kasa non-adhesive, perban.</div>
+                    <div class="cell">Luka bakar >5% luas tubuh/derajat 2-3 → Rujuk ke RS untuk penanganan khusus.</div>
+                </div>
+
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                            <svg class="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+                            </svg>
+                            Petugas P3K Terlatih
+                        </h4>
+                        <p class="text-sm text-gray-700">Minimal 1 petugas P3K bersertifikat di setiap shift kerja dengan pelatihan refresh setiap 2 tahun.</p>
+                    </div>
+                    <div class="p-4 bg-purple-50 rounded-lg border-l-4 border-purple-500">
+                        <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                            <svg class="w-5 h-5 text-purple-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                            </svg>
+                            Inspeksi Kotak P3K
+                        </h4>
+                        <p class="text-sm text-gray-700">Pengecekan kelengkapan & tanggal kedaluwarsa dilakukan setiap bulan oleh supervisor K3.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="bg-gradient-to-br from-green-800 to-green-900 text-white py-16 mt-10">
