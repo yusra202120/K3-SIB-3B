@@ -16,7 +16,6 @@
             theme: {
                 extend: {
                     colors: {
-                        // Mendefinisikan warna brand agar konsisten
                         'primary-green': '#2E7D32',
                         'secondary-green': '#1b5e20',
                         'primary-yellow': '#FDD835',
@@ -53,7 +52,7 @@
 
         .process-grid {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
+            grid-template-columns: 1.2fr 0.8fr 1fr 0.8fr 1fr;
             gap: 1px;
             background: #e5e7eb;
             border-radius: 12px;
@@ -80,6 +79,20 @@
             background: #f0fdf4;
             transform: translateX(4px);
         }
+
+        .risk-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .risk-rendah { background: #dcfce7; color: #166534; }
+        .risk-sedang { background: #fef3c7; color: #92400e; }
+        .risk-tinggi { background: #fed7aa; color: #9a3412; }
+        .risk-sangat-tinggi { background: #fecaca; color: #991b1b; }
 
         @media (max-width: 900px) {
             .process-grid {
@@ -178,7 +191,6 @@
             animation: fadeInUp 0.6s ease-out forwards;
         }
 
-        /* Mengganti warna overlay agar serasi dengan branding hijau */
         .hero-overlay {
             background: linear-gradient(135deg, rgba(46, 125, 50, 0.85) 0%, rgba(27, 94, 32, 0.75) 100%);
         }
@@ -247,7 +259,89 @@
 
     <main class="max-w-7xl mx-auto px-6 py-10 space-y-8">
 
-        
+        <section class="card p-6">
+            <div class="flex items-start space-x-4 mb-6">
+                <div class="icon-box bg-blue-500/10 text-blue-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Panduan Penilaian Risiko K3</h2>
+                    <p class="text-gray-700 mb-4">
+                        Setiap potensi bahaya dinilai berdasarkan <strong>Likelihood (Kemungkinan)</strong> dan <strong>Severity (Keparahan)</strong> untuk menentukan tingkat risiko dan prioritas pengendalian.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                        <svg class="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                        </svg>
+                        Likelihood (L) - Kemungkinan
+                    </h3>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li><strong>1:</strong> Sangat Kecil Kemungkinan</li>
+                        <li><strong>2:</strong> Kecil Kemungkinan</li>
+                        <li><strong>3:</strong> Jarang Kemungkinan</li>
+                        <li><strong>4:</strong> Sering Terjadi</li>
+                        <li><strong>5:</strong> Sangat Sering Terjadi</li>
+                    </ul>
+                </div>
+
+                <div class="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                    <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                        <svg class="w-5 h-5 text-orange-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                        </svg>
+                        Severity (S) - Keparahan
+                    </h3>
+                    <ul class="text-sm space-y-2 text-gray-700">
+                        <li><strong>1:</strong> Bahaya Kecil</li>
+                        <li><strong>2:</strong> Bahaya Ringan</li>
+                        <li><strong>3:</strong> Bahaya Sedang</li>
+                        <li><strong>4:</strong> Berbahaya</li>
+                        <li><strong>5:</strong> Sangat Berbahaya</li>
+                    </ul>
+                </div>
+
+                <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                    <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                        <svg class="w-5 h-5 text-purple-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                        </svg>
+                        Level Risiko (L × S)
+                    </h3>
+                    <ul class="text-sm space-y-2">
+                        <li class="flex items-center">
+                            <span class="risk-badge risk-rendah mr-2">1-3</span>
+                            <span class="text-gray-700">Rendah</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="risk-badge risk-sedang mr-2">4-9</span>
+                            <span class="text-gray-700">Sedang</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="risk-badge risk-tinggi mr-2">10-15</span>
+                            <span class="text-gray-700">Tinggi</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="risk-badge risk-sangat-tinggi mr-2">16-25</span>
+                            <span class="text-gray-700">Sangat Tinggi</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-4 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                <p class="text-sm text-gray-700">
+                    <strong>Catatan:</strong> Penilaian risiko dilakukan secara berkala dan diperbarui setiap ada perubahan proses kerja, insiden, atau hasil inspeksi K3.
+                </p>
+            </div>
+        </section>
 
         <section class="card overflow-hidden">
             <button
@@ -266,115 +360,25 @@
                     <div class="header">Proses Kerja</div>
                     <div class="header">Jenis Bahaya</div>
                     <div class="header">Potensi Bahaya Kritis</div>
-                    <div class="header">Jenis Pengendalian K3</div>
-
-                    <div class="cell">Menabur Sekam Kering</div>
-                    <div class="cell">Kesehatan</div>
-                    <div class="cell">Debu sekam menyentuh kulit, iritasi mata.</div>
-                    <div class="cell">APD (Sarung Tangan, Kacamata Goggle)</div>
-
-                    <div class="cell">Pembersihan Kandang</div>
-                    <div class="cell">Kesehatan</div>
-                    <div class="cell">Terhirup disinfektan berbau menyengat.</div>
-                    <div class="cell">APD (Masker Respirator/Ventilasi)</div>
-
-                    <div class="cell">Pengisian Solar/Menyalakan Heater</div>
-                    <div class="cell">Keselamatan</div>
-                    <div class="cell">Solar tercecer ke sekam dan lantai (Kebakaran/Ledakan).</div>
-                    <div class="cell">Substitusi (Gunakan corong/alat penyedot)</div>
-
-                    <div class="cell">Menyalakan Mesin Heater</div>
-                    <div class="cell">Keselamatan</div>
-                    <div class="cell">Korsleting listrik.</div>
-                    <div class="cell">Perancangan (Pengecekan alat/kabel rutin)</div>
-
-                    <div class="cell">Pemberian Pakan ke Ternak</div>
-                    <div class="cell">Keselamatan</div>
-                    <div class="cell">Dipatuk ayam, tidak pakai sepatu safety (Tertusuk).</div>
-                    <div class="cell">APD (Sepatu Safety/Boot K3)</div>
-
-                    <div class="cell">Pemberian Obat/Vaksin</div>
-                    <div class="cell">Kesehatan</div>
-                    <div class="cell">Aroma bahan menyengat/terhirup.</div>
-                    <div class="cell">APD (Masker)</div>
-
-                    <div class="cell">Angkat Pakan/Ternak</div>
-                    <div class="cell">Kesehatan (Ergonomi)</div>
-                    <div class="cell">Beban berat, posisi angkat salah (Nyeri punggung).</div>
-                    <div class="cell">Eliminasi/Administrasi (Gunakan gerobak/Angkat dua orang)</div>
-
-                    <div class="cell">Pembuangan Sisa Vaksin/Obat</div>
-                    <div class="cell">Lingkungan</div>
-                    <div class="cell">Pencemaran lingkungan.</div>
-                    <div class="cell">Substitusi (Prosedur pembuangan B3 yang benar)</div>
-
-                    <div class="cell">Angkat Pakan Melewati Tangga</div>
-                    <div class="cell">Keselamatan (Ergonomi)</div>
-                    <div class="cell">Tangga curam/tidak ada pegangan (Terjatuh).</div>
-                    <div class="cell">Administrasi (Membuat pegangan tangga, batasi beban ekstrem)</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="card overflow-hidden">
-            <button
-                class="toggle-btn brand-gradient text-white w-full px-6 py-4 font-semibold text-left text-lg flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                    </svg>
-                    <span>B. Gudang Pakan / Silo</span>
-                </div>
-                <span class="arrow transition-transform">▼</span>
-            </button>
-            <div class="content p-6 hidden">
-                <div class="process-grid">
-                    <div class="header">Proses Kerja</div>
-                    <div class="header">Jenis Bahaya</div>
-                    <div class="header">Potensi Bahaya Kritis</div>
-                    <div class="header">Jenis Pengendalian K3</div>
-
-                    <div class="cell">Pengambilan Pakan</div>
-                    <div class="cell">Keselamatan</div>
-                    <div class="cell">Gantungan pada timbangan roboh/terperosok.</div>
-                    <div class="cell">Administrasi (Memilih tempat gantungan yang kokoh).</div>
-
-                    <div class="cell">Bekerja di Ketinggian (Silo)</div>
-                    <div class="cell">Keselamatan</div>
-                    <div class="cell">Terjatuh dari ketinggian.</div>
-                    <div class="cell">Perancangan/APD (Wajib Full Body Harness, izin kerja ketinggian).</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="card overflow-hidden">
-            <button
-                class="toggle-btn brand-gradient text-white w-full px-6 py-4 font-semibold text-left text-lg flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                    </svg>
-                    <span>C. Unit Penetasan Telur</span>
-                </div>
-                <span class="arrow transition-transform">▼</span>
-            </button>
-            <div class="content p-6 hidden">
-                <div class="process-grid">
-                    <div class="header">Proses Kerja</div>
-                    <div class="header">Jenis Bahaya</div>
-                    <div class="header">Potensi Bahaya Kritis</div>
+                    <div class="header">Analisa & Penilaian Risiko</div>
                     <div class="header">Jenis Pengendalian K3</div>
 
                     <div class="cell">Pembersihan Mesin</div>
                     <div class="cell">Kesehatan</div>
                     <div class="cell">Paparan larutan kimia/disinfektan.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 4 | <strong>S:</strong> 3</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 12 (Tinggi)</div>
+                    </div>
                     <div class="cell">APD (Sarung tangan nitril, Kacamata safety).</div>
 
                     <div class="cell">Penanganan Biologis</div>
                     <div class="cell">Kesehatan</div>
                     <div class="cell">Bio-aerosol, debu dari sisa cangkang telur.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 4 | <strong>S:</strong> 3</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 12 (Tinggi)</div>
+                    </div>
                     <div class="cell">APD (Masker N95, Jumpsuit steril).</div>
                 </div>
             </div>
@@ -388,7 +392,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
-                    <span>D. Rumah Potong Ayam (RPA)</span>
+                    <span>B. Rumah Potong Ayam (RPA)</span>
                 </div>
                 <span class="arrow transition-transform">▼</span>
             </button>
@@ -397,21 +401,34 @@
                     <div class="header">Proses Kerja</div>
                     <div class="header">Jenis Bahaya</div>
                     <div class="header">Potensi Bahaya Kritis</div>
+                    <div class="header">Analisa & Penilaian Risiko</div>
                     <div class="header">Jenis Pengendalian K3</div>
 
                     <div class="cell">Pencabutan Bulu / Eviserasi</div>
                     <div class="cell">Keselamatan</div>
                     <div class="cell">Penggunaan pisau/alat potong tajam (Terpotong).</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 4 | <strong>S:</strong> 3</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 12 (Tinggi)</div>
+                    </div>
                     <div class="cell">APD (Sarung tangan mesh/tahan potong, Sarung tangan Nitril).</div>
 
                     <div class="cell">Area Lantai Basah</div>
                     <div class="cell">Keselamatan</div>
                     <div class="cell">Lantai licin.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 4 | <strong>S:</strong> 3</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 12 (Tinggi)</div>
+                    </div>
                     <div class="cell">Perancangan/APD (Lantai anti-slip, Sepatu Boot Anti-Slip K3).</div>
 
                     <div class="cell">Pengoperasian Mesin RPA</div>
                     <div class="cell">Keselamatan</div>
                     <div class="cell">Mesin bergerak (Terjepit/terlilit).</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 2 | <strong>S:</strong> 5</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 10 (Tinggi)</div>
+                    </div>
                     <div class="cell">Administrasi (Prosedur LOTO saat maintenance).</div>
                 </div>
             </div>
@@ -425,7 +442,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
-                    <span>E. P3K (Pertolongan Pertama Pada Kecelakaan)</span>
+                    <span>C. P3K (Pertolongan Pertama Pada Kecelakaan)</span>
                 </div>
                 <span class="arrow transition-transform">▼</span>
             </button>
@@ -448,51 +465,88 @@
                     <div class="header">Jenis Kecelakaan</div>
                     <div class="header">Tindakan P3K</div>
                     <div class="header">Peralatan P3K</div>
+                    <div class="header">Analisa & Penilaian Risiko</div>
                     <div class="header">Tindak Lanjut</div>
 
                     <div class="cell">Luka Potong/Sayat (Pisau RPA, Alat Tajam)</div>
                     <div class="cell">Hentikan pendarahan, bersihkan luka dengan antiseptik, tutup dengan kasa steril.</div>
                     <div class="cell">Kasa steril, plester, antiseptik (povidone iodine), perban elastis.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 4 | <strong>S:</strong> 3</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 12 (Tinggi)</div>
+                    </div>
                     <div class="cell">Jika luka dalam/pendarahan tidak berhenti → Rujuk ke klinik/RS.</div>
 
                     <div class="cell">Terjepit/Terbentur Mesin</div>
                     <div class="cell">Hentikan mesin (LOTO), kompres es pada area bengkak, imobilisasi jika dicurigai patah tulang.</div>
                     <div class="cell">Instant cold pack, bidai imobilisasi, perban segitiga.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 2 | <strong>S:</strong> 5</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 10 (Tinggi)</div>
+                    </div>
                     <div class="cell">Rujuk ke RS untuk pemeriksaan rontgen dan penanganan lebih lanjut.</div>
 
                     <div class="cell">Iritasi Mata (Debu, Disinfektan)</div>
                     <div class="cell">Bilas mata dengan air mengalir atau eye wash selama 15 menit, jangan mengucek mata.</div>
                     <div class="cell">Eye wash station/botol, kacamata pelindung cadangan.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 4 | <strong>S:</strong> 2</div>
+                        <div class="risk-badge risk-sedang">Risiko: 8 (Sedang)</div>
+                    </div>
                     <div class="cell">Jika iritasi berlanjut/penglihatan kabur → Rujuk ke dokter mata.</div>
 
                     <div class="cell">Paparan Kimia Kulit (Disinfektan, Solar)</div>
                     <div class="cell">Lepaskan pakaian terkontaminasi, bilas kulit dengan air mengalir minimal 20 menit.</div>
                     <div class="cell">Safety shower/selang air, sabun netral, handuk bersih.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 3 | <strong>S:</strong> 3</div>
+                        <div class="risk-badge risk-sedang">Risiko: 9 (Sedang)</div>
+                    </div>
                     <div class="cell">Dokumentasikan jenis bahan kimia → Rujuk ke klinik jika muncul luka bakar kimia.</div>
 
                     <div class="cell">Terhirup Gas/Uap Berbahaya (Amonia, Gas Heater)</div>
                     <div class="cell">Pindahkan korban ke area terbuka/udara segar, longgarkan pakaian, beri posisi setengah duduk.</div>
                     <div class="cell">Oksigen portable (jika tersedia), masker respirator cadangan.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 3 | <strong>S:</strong> 4</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 12 (Tinggi)</div>
+                    </div>
                     <div class="cell">Jika sesak napas berlanjut/pusing → Panggil ambulans, berikan oksigen.</div>
 
                     <div class="cell">Terjatuh dari Ketinggian (Silo, Tangga)</div>
                     <div class="cell">Jangan pindahkan korban, cek kesadaran & pernapasan, imobilisasi leher & tulang belakang.</div>
                     <div class="cell">Cervical collar, spinal board, selimut emergency.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 2 | <strong>S:</strong> 5</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 10 (Tinggi)</div>
+                    </div>
                     <div class="cell">SEGERA panggil ambulans (119) → Evakuasi hanya oleh tim medis terlatih.</div>
 
                     <div class="cell">Heat Stroke (Kelelahan Panas)</div>
                     <div class="cell">Pindahkan ke tempat sejuk, kompres dingin pada leher/dahi/ketiak, beri minum bertahap jika sadar.</div>
                     <div class="cell">Kompres dingin, handuk basah, minuman elektrolit/oralit.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 3 | <strong>S:</strong> 3</div>
+                        <div class="risk-badge risk-sedang">Risiko: 9 (Sedang)</div>
+                    </div>
                     <div class="cell">Jika suhu tubuh sangat tinggi/tidak sadar → Rujuk ke RS untuk penanganan hipetermia.</div>
 
                     <div class="cell">Patukan/Cakaran Ayam</div>
                     <div class="cell">Cuci luka dengan sabun & air mengalir, beri antiseptik, tutup dengan kasa steril.</div>
                     <div class="cell">Sabun antiseptik, antiseptik, kasa steril, plester.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 4 | <strong>S:</strong> 2</div>
+                        <div class="risk-badge risk-sedang">Risiko: 8 (Sedang)</div>
+                    </div>
                     <div class="cell">Cek status vaksin tetanus pekerja → Vaksinasi booster jika perlu.</div>
 
                     <div class="cell">Luka Bakar (Heater, Air Panas)</div>
                     <div class="cell">Aliri dengan air dingin (bukan es) selama 10-20 menit, jangan pecahkan lepuhan, tutup dengan kasa steril.</div>
                     <div class="cell">Burn gel/salep luka bakar, kasa non-adhesive, perban.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 3 | <strong>S:</strong> 4</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 12 (Tinggi)</div>
+                    </div>
                     <div class="cell">Luka bakar >5% luas tubuh/derajat 2-3 → Rujuk ke RS untuk penanganan khusus.</div>
                 </div>
 
@@ -527,7 +581,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 6.253v13m0-13C10.832 5.477 9.202 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.798 18 7.5 18s3.332.477 4.5 1.247m0-13C13.168 5.477 14.798 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.202 18 16.5 18s-3.332-.477-4.5-1.247m0 0V5" />
                     </svg>
-                    <span>F. Edukasi & Pelatihan K3</span>
+                    <span>D. Edukasi & Pelatihan K3</span>
                 </div>
                 <span class="arrow transition-transform">▼</span>
             </button>
@@ -596,7 +650,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002.944 12c0 4.935 3.197 9.17 7.706 10.795h0C14.773 21.168 18.805 16.941 20.278 12c.07-.225.127-.45.184-.675M12 18V8" />
                     </svg>
-                    <span>G. Manajemen Risiko K3 Terstruktur</span>
+                    <span>E. Manajemen Risiko K3 Terstruktur</span>
                 </div>
                 <span class="arrow transition-transform">▼</span>
             </button>
@@ -667,6 +721,146 @@
                         </div>
                         <p class="text-sm text-gray-700">
                             Memeriksa efektivitas kontrol yang telah diterapkan, melakukan audit berkala, dan meninjau ulang manajemen risiko secara keseluruhan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card p-6">
+            <div class="flex items-start space-x-4 mb-6">
+                <div class="icon-box bg-purple-500/10 text-purple-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <div class="flex-1">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-3">Dokumen Lengkap Keselamatan Kerja</h2>
+                    <p class="text-gray-700 mb-4">
+                        Unduh atau lihat dokumen lengkap prosedur keselamatan kerja PT Mulia Farmindo Sejahtera dalam format PDF untuk referensi lebih detail.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200 hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-box bg-blue-500/20 text-blue-600 mr-4">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Manual K3 Lengkap</h3>
+                            <p class="text-sm text-gray-600">Prosedur & SOP Keselamatan Kerja</p>
+                        </div>
+                    </div>
+                    <ul class="text-sm text-gray-700 space-y-2 mb-4">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Identifikasi Bahaya per Area Kerja
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Penilaian Risiko Terstruktur
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Protokol Tanggap Darurat
+                        </li>
+                    </ul>
+                    <div class="flex space-x-3">
+                        <a href="assets/uud/K3.pdf" target="_blank"
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition text-center flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            Lihat PDF
+                        </a>
+                        <a href="assets/uud/K3.pdf" download
+                            class="bg-white hover:bg-gray-50 text-blue-600 font-semibold py-3 px-4 rounded-lg transition border-2 border-blue-600 flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border border-green-200 hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="icon-box bg-green-500/20 text-green-600 mr-4">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-800">Checklist Inspeksi K3</h3>
+                            <p class="text-sm text-gray-600">Form & Template Pemeriksaan</p>
+                        </div>
+                    </div>
+                    <ul class="text-sm text-gray-700 space-y-2 mb-4">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Checklist Inspeksi Harian
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Form Laporan Insiden
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Audit K3 Berkala
+                        </li>
+                    </ul>
+                    <div class="flex space-x-3">
+                        <a href="assets/uud/K3.pdf" target="_blank"
+                            class="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition text-center flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            Lihat PDF
+                        </a>
+                        <a href="assets/uud/K3.pdf" download
+                            class="bg-white hover:bg-gray-50 text-green-600 font-semibold py-3 px-4 rounded-lg transition border-2 border-green-600 flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-amber-50 rounded-lg border-l-4 border-amber-500">
+                <div class="flex items-start">
+                    <svg class="w-5 h-5 text-amber-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <p class="text-sm text-gray-700 font-semibold mb-1">Catatan Penting:</p>
+                        <p class="text-sm text-gray-700">
+                            Dokumen-dokumen ini adalah materi referensi internal. Semua karyawan wajib memahami isi dokumen dan menerapkan prosedur K3 dalam pekerjaan sehari-hari. Untuk pertanyaan lebih lanjut, hubungi Supervisor K3 atau HSE Department.
                         </p>
                     </div>
                 </div>
@@ -786,4 +980,149 @@
     </script>
 </body>
 
-</html>
+</html>enilaian Risiko</div>
+                    <div class="header">Jenis Pengendalian K3</div>
+
+                    <div class="cell">Menabur Sekam Kering</div>
+                    <div class="cell">Kesehatan</div>
+                    <div class="cell">Debu sekam menyentuh kulit, iritasi mata.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 4 | <strong>S:</strong> 2</div>
+                        <div class="risk-badge risk-sedang">Risiko: 8 (Sedang)</div>
+                    </div>
+                    <div class="cell">APD (Sarung Tangan, Kacamata Goggle)</div>
+
+                    <div class="cell">Pembersihan Kandang</div>
+                    <div class="cell">Kesehatan</div>
+                    <div class="cell">Terhirup disinfektan berbau menyengat.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 4 | <strong>S:</strong> 3</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 12 (Tinggi)</div>
+                    </div>
+                    <div class="cell">APD (Masker Respirator/Ventilasi)</div>
+
+                    <div class="cell">Pengisian Solar/Menyalakan Heater</div>
+                    <div class="cell">Keselamatan</div>
+                    <div class="cell">Solar tercecer ke sekam dan lantai (Kebakaran/Ledakan).</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 3 | <strong>S:</strong> 5</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 15 (Tinggi)</div>
+                    </div>
+                    <div class="cell">Substitusi (Gunakan corong/alat penyedot)</div>
+
+                    <div class="cell">Menyalakan Mesin Heater</div>
+                    <div class="cell">Keselamatan</div>
+                    <div class="cell">Korsleting listrik.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 3 | <strong>S:</strong> 4</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 12 (Tinggi)</div>
+                    </div>
+                    <div class="cell">Perancangan (Pengecekan alat/kabel rutin)</div>
+
+                    <div class="cell">Pemberian Pakan ke Ternak</div>
+                    <div class="cell">Keselamatan</div>
+                    <div class="cell">Dipatuk ayam, tidak pakai sepatu safety (Tertusuk).</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 4 | <strong>S:</strong> 2</div>
+                        <div class="risk-badge risk-sedang">Risiko: 8 (Sedang)</div>
+                    </div>
+                    <div class="cell">APD (Sepatu Safety/Boot K3)</div>
+
+                    <div class="cell">Pemberian Obat/Vaksin</div>
+                    <div class="cell">Kesehatan</div>
+                    <div class="cell">Aroma bahan menyengat/terhirup.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 3 | <strong>S:</strong> 2</div>
+                        <div class="risk-badge risk-sedang">Risiko: 6 (Sedang)</div>
+                    </div>
+                    <div class="cell">APD (Masker)</div>
+
+                    <div class="cell">Angkat Pakan/Ternak</div>
+                    <div class="cell">Kesehatan (Ergonomi)</div>
+                    <div class="cell">Beban berat, posisi angkat salah (Nyeri punggung).</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 4 | <strong>S:</strong> 3</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 12 (Tinggi)</div>
+                    </div>
+                    <div class="cell">Eliminasi/Administrasi (Gunakan gerobak/Angkat dua orang)</div>
+
+                    <div class="cell">Pembuangan Sisa Vaksin/Obat</div>
+                    <div class="cell">Lingkungan</div>
+                    <div class="cell">Pencemaran lingkungan.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 3 | <strong>S:</strong> 3</div>
+                        <div class="risk-badge risk-sedang">Risiko: 9 (Sedang)</div>
+                    </div>
+                    <div class="cell">Substitusi (Prosedur pembuangan B3 yang benar)</div>
+
+                    <div class="cell">Angkat Pakan Melewati Tangga</div>
+                    <div class="cell">Keselamatan (Ergonomi)</div>
+                    <div class="cell">Tangga curam/tidak ada pegangan (Terjatuh).</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 3 | <strong>S:</strong> 4</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 12 (Tinggi)</div>
+                    </div>
+                    <div class="cell">Administrasi (Membuat pegangan tangga, batasi beban ekstrem)</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card overflow-hidden">
+            <button
+                class="toggle-btn brand-gradient text-white w-full px-6 py-4 font-semibold text-left text-lg flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                    <span>B. Gudang Pakan / Silo</span>
+                </div>
+                <span class="arrow transition-transform">▼</span>
+            </button>
+            <div class="content p-6 hidden">
+                <div class="process-grid">
+                    <div class="header">Proses Kerja</div>
+                    <div class="header">Jenis Bahaya</div>
+                    <div class="header">Potensi Bahaya Kritis</div>
+                    <div class="header">Analisa & Penilaian Risiko</div>
+                    <div class="header">Jenis Pengendalian K3</div>
+
+                    <div class="cell">Pengambilan Pakan</div>
+                    <div class="cell">Keselamatan</div>
+                    <div class="cell">Gantungan pada timbangan roboh/terperosok.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 3 | <strong>S:</strong> 3</div>
+                        <div class="risk-badge risk-sedang">Risiko: 9 (Sedang)</div>
+                    </div>
+                    <div class="cell">Administrasi (Memilih tempat gantungan yang kokoh).</div>
+
+                    <div class="cell">Bekerja di Ketinggian (Silo)</div>
+                    <div class="cell">Keselamatan</div>
+                    <div class="cell">Terjatuh dari ketinggian.</div>
+                    <div class="cell">
+                        <div class="mb-1"><strong>L:</strong> 3 | <strong>S:</strong> 5</div>
+                        <div class="risk-badge risk-tinggi">Risiko: 15 (Tinggi)</div>
+                    </div>
+                    <div class="cell">Perancangan/APD (Wajib Full Body Harness, izin kerja ketinggian).</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card overflow-hidden">
+            <button
+                class="toggle-btn brand-gradient text-white w-full px-6 py-4 font-semibold text-left text-lg flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                    <span>C. Unit Penetasan Telur</span>
+                </div>
+                <span class="arrow transition-transform">▼</span>
+            </button>
+            <div class="content p-6 hidden">
+                <div class="process-grid">
+                    <div class="header">Proses Kerja</div>
+                    <div class="header">Jenis Bahaya</div>
+                    <div class="header">Potensi Bahaya Kritis</div>
+                    <div class="header">Analisa & P
